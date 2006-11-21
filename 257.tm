@@ -10,7 +10,122 @@
   <with|font-family|tt|kloeckner@dam.brown.edu>. Any mistakes or omissions in
   these notes are certainly due to my typing.
 
-  <section|One-Dimensional Scalar Conservation Laws>
+  <\table-of-contents|toc>
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|Table of
+    contents> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-1><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|1<space|2spc>Theory
+    of One-Dimensional Scalar Conservation Laws>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-2><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|2<space|2spc>Numerics>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-6><vspace|0.5fn>
+
+    <with|par-left|1.5fn|2.1<space|2spc>Examples of conservative schemes
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-7>>
+
+    <with|par-left|3fn|2.1.1<space|2spc>The Godunov Scheme
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-8>>
+
+    <with|par-left|3fn|2.1.2<space|2spc>The Lax-Friedrichs Scheme
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-9>>
+
+    <with|par-left|3fn|2.1.3<space|2spc>The local Lax-Friedrichs Scheme
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-10>>
+
+    <with|par-left|3fn|2.1.4<space|2spc>Roe Scheme
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-11>>
+
+    <with|par-left|3fn|2.1.5<space|2spc>Engquist-Osher Scheme
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-12>>
+
+    <with|par-left|3fn|2.1.6<space|2spc>Lax-Wendroff Scheme
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-13>>
+
+    <with|par-left|3fn|2.1.7<space|2spc>MacCormack Scheme
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-14>>
+
+    <with|par-left|1.5fn|2.2<space|2spc>Higher-order TVD Schemes
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-15>>
+
+    <with|par-left|3fn|2.2.1<space|2spc>General Framework of a Conservative
+    Finite-Volume Scheme <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-16>>
+
+    <with|par-left|3fn|2.2.2<space|2spc>Generalized MUSCL Scheme
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-17>>
+
+    <with|par-left|1.5fn|2.3<space|2spc>Essentially Non-Oscillatory Schemes
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-19>>
+
+    <with|par-left|1.5fn|2.4<space|2spc>Weighted ENO Schemes
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-20>>
+
+    <with|par-left|1.5fn|2.5<space|2spc>Finite Difference Methods
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-21>>
+
+    <with|par-left|3fn|2.5.1<space|2spc>Accuracy
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-22>>
+
+    <with|par-left|3fn|2.5.2<space|2spc>Stability
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-23>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|3<space|2spc>Two
+    Space Dimensions> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-24><vspace|0.5fn>
+
+    <with|par-left|1.5fn|3.1<space|2spc>FV methods in 2D
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-25>>
+
+    <with|par-left|3fn|3.1.1<space|2spc>The Linear Case
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-26>>
+
+    <with|par-left|3fn|3.1.2<space|2spc>The Nonlinear Case
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-27>>
+
+    <with|par-left|1.5fn|3.2<space|2spc>Finite Difference Methods
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-28>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|4<space|2spc>Systems
+    of Conservation Laws> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-29><vspace|0.5fn>
+
+    <with|par-left|1.5fn|4.1<space|2spc>A First Attempt: Generalize Methods
+    from AM255 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-30>>
+
+    <with|par-left|1.5fn|4.2<space|2spc>How to Generalize Scalar Higher-Order
+    Schemes to Systems <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-31>>
+
+    <with|par-left|1.5fn|4.3<space|2spc>The Nonlinear Case
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-32>>
+  </table-of-contents>
+
+  <section|Theory of One-Dimensional Scalar Conservation Laws>
 
   <\equation>
     <label|eq:scalar-claw>u<rsub|t>+f(u)<rsub|x>=0,
@@ -1376,9 +1491,9 @@
     Conditions on <with|mode|math|P<rsub|j>>:
 
     <\itemize>
-      <item><with|mode|math|<big|int><rsub|I<rsub|j>>P<rsub|j>(x)\<mathd\>x=<wide|u|\<bar\>><rsub|j>>,
+      <item><with|mode|math|<frac|1|\<Delta\>x><big|int><rsub|I<rsub|j>>P<rsub|j>(x)\<mathd\>x=<wide|u|\<bar\>><rsub|j>>,
 
-      <item><with|mode|math|<big|int><rsub|I<rsub|j+l>>P<rsub|j>(x)\<mathd\>x=<wide|u|\<bar\>><rsub|j+l>>
+      <item><with|mode|math|<frac|1|\<Delta\>x><big|int><rsub|I<rsub|j+l>>P<rsub|j>(x)\<mathd\>x=<wide|u|\<bar\>><rsub|j+l>>
       for some set of <with|mode|math|l\<neq\>0>. (accuracy)
     </itemize>
   </quote-env>
@@ -1399,13 +1514,13 @@
   Godunov's theorem, should be oscillatory. Now define
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|<wide|u|~><rsub|j>>|<cell|=>|<cell|u<rsub|j+1/2><rsup|->-<wide|u|\<bar\>><rsub|j>,>>|<row|<cell|<wide|<wide|u|~>|~><rsub|j+1>>|<cell|=>|<cell|-u<rsub|j+1/2><rsup|+>-<wide|u|\<bar\>><rsub|j+1>,>>>>
+    <tformat|<table|<row|<cell|<wide|u|~><rsub|j>>|<cell|=>|<cell|u<rsub|j+1/2><rsup|->-<wide|u|\<bar\>><rsub|j>,>>|<row|<cell|<wide|<wide|u|~>|~><rsub|j+1>>|<cell|=>|<cell|u<rsub|j+1/2><rsup|+>+<wide|u|\<bar\>><rsub|j+1>,>>>>
   </eqnarray*>
 
   or equivalently
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|u<rsub|j+1/2><rsup|->>|<cell|=>|<cell|<wide|u|\<bar\>><rsub|j>+<wide|u|~><rsub|j>,>>|<row|<cell|u<rsub|j+1/2><rsup|+>>|<cell|=>|<cell|<wide|u|\<bar\>><rsub|j+1>+<wide|<wide|u|~>|~><rsub|j+1>.>>>>
+    <tformat|<table|<row|<cell|u<rsub|j+1/2><rsup|->>|<cell|=>|<cell|<wide|u|\<bar\>><rsub|j>+<wide|u|~><rsub|j>,>>|<row|<cell|u<rsub|j+1/2><rsup|+>>|<cell|=>|<cell|<wide|u|\<bar\>><rsub|j+1>-<wide|<wide|u|~>|~><rsub|j+1>.>>>>
   </eqnarray*>
 
   Then, remember our previous modification of the reconstruction and do
@@ -1418,7 +1533,7 @@
   and with that
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|u<rsup|-,mod><rsub|j+1/2>>|<cell|=>|<cell|<wide|u|\<bar\>><rsub|j>+<wide|u|~><rsub|j><rsup|mod>>>|<row|<cell|u<rsub|j+1/2><rsup|+,mod>>|<cell|=>|<cell|<wide|u|\<bar\>><rsub|j>+<wide|<wide|u|~>|~><rsub|j+1><rsup|mod>.>>>>
+    <tformat|<table|<row|<cell|u<rsup|-,mod><rsub|j+1/2>>|<cell|=>|<cell|<wide|u|\<bar\>><rsub|j>+<wide|u|~><rsub|j><rsup|mod>>>|<row|<cell|u<rsub|j+1/2><rsup|+,mod>>|<cell|=>|<cell|<wide|u|\<bar\>><rsub|j>-<wide|<wide|u|~>|~><rsub|j+1><rsup|mod>.>>>>
   </eqnarray*>
 
   To show that this modification does not destroy much accuracy and is in
@@ -1539,6 +1654,767 @@
     tradeoff between oscillation and accuracy. One analysis of DG was carried
     out using <with|mode|math|M=<frac|2|3>\|u<rsub|x,x>\|> at extrema.
   </itemize>
+
+  <em|Discussion of HW#3, Problem 2:> Here's how to show the CEI in the
+  semidiscrete case. Let <with|mode|math|f(\<uparrow\>,\<downarrow\>)> and
+  <with|mode|math|U<rprime|''>(u)\<geqslant\>0>, and
+
+  <\equation*>
+    F(u)=<big|int><rsup|u>U<rprime|'>(u)f<rprime|'>(u)\<mathd\>u=U<rprime|'>(u)f(u)-<big|int><rsup|u>U<rprime|''>(u)f(u).
+  </equation*>
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>u<rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x><left|[><wide|f|^>(u<rsub|j>,u<rsub|j+1>)<rsub|x>-<wide|f|^>(u<rsub|j-1>,u<rsub|j>)<right|]>>|<cell|=>|<cell|0>>>>
+  </eqnarray*>
+
+  Then
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>U(u<rsub|j>)|\<mathd\>t>+<frac|1|\<Delta\>x>U<rprime|'>(u<rsub|j>)<left|[><wide|f|^>(u<rsub|j>,u<rsub|j+1>)-<wide|f|^>(u<rsub|j-1>,u<rsub|j>)<right|]>>|<cell|=>|<cell|0.>>>>
+  </eqnarray*>
+
+  Define
+
+  <\equation*>
+    <wide|F|^><rsub|j+1/2>=U<rprime|'>(u)<wide|f|^>(u<rsub|j>,u<rsub|j+1>)-<big|int><rsup|u<rsub|j>>U<rprime|''>(u)f(u)\<mathd\>u.
+  </equation*>
+
+  Then
+
+  <\equation*>
+    <frac|\<mathd\>U(u<rsub|j>)|\<mathd\>t>+<frac|1|\<Delta\>x><left|[><wide|F|^><rsub|j+1/2>-<wide|F|^><rsub|j-1/2><right|]>+<wide*|<frac|1|\<Delta\>x>\<Theta\><rsub|j>|\<wide-underbrace\>><rsub|<with|mode|text|``junky''
+    :)>>=0.
+  </equation*>
+
+  Then
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|\<Theta\><rsub|j>>|<cell|=>|<cell|<big|int><rsup|u<rsub|j>>U<rprime|''>(u)f(u)\<mathd\>u-U<rprime|'>(u<rsub|j>)<wide|f|^>(u<rsub|j-1>,u<rsub|j>)+U<rprime|'>(u<rsub|j-1>)<wide|f|^>(u<rsub|j-1>,u<rsub|j>)-<big|int><rsup|u<rsub|j-1>>U<rprime|''>(u)f(u)\<mathd\>u>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|u<rsub|j-1>><rsup|u<rsub|j>>U<rprime|''>(u)f(u)\<mathd\>u-(U<rprime|'>(u<rsub|j>)-U<rprime|'>(u<rsub|j-1>)<wide|f|^>(u<rsub|j-1>,u<rsub|j>)>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|u<rsub|j-1>><rsup|u<rsub|j>>U<rprime|''>(u)f(u)\<mathd\>u-<big|int><rsub|u<rsub|j-1>><rsup|u<rsub|j>>U<rprime|''>(u)\<mathd\>u<wide|f|^>(u<rsub|j-1>,u<rsub|j>)>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|u<rsub|j-1>><rsup|u<rsub|j>>U<rprime|''>(u)<left|[>f(u)-<wide|f|^>(u<rsub|j-1>,u<rsub|j>)<right|]>\<mathd\>u\<geqslant\>0.>>>>
+  </eqnarray*>
+
+  Then
+
+  <\enumerate>
+    <item><with|mode|math|u<rsub|j-1>\<less\>u<rsub|j>>.
+    <with|mode|math|u<rsub|j-1>\<leqslant\>u<rsub|j>>
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|f(u)-<wide|f|^>(u<rsub|j-1>,u<rsub|j>)=<wide|f|^>(u,u)-<wide|f|^>(u<rsub|j-1>,u<rsub|j>)\<ldots\>>|<cell|>|<cell|>>>>
+    </eqnarray*>
+  </enumerate>
+
+  <with|color|red|...and then he cleaned the blackboard.>
+
+  (End of HW discussion)
+
+  <subsection|Essentially Non-Oscillatory Schemes>
+
+  This scheme goes back to the idea of the MUSCL scheme,
+
+  <\equation*>
+    u<rsub|j+1/2><rsup|->\<leftarrow\><wide|u|\<bar\>><rsub|j>+<frac|1|2>minmod(<wide*|<wide|u|\<bar\>><rsub|j+1>-<wide|u|\<bar\>><rsub|j>|\<wide-underbrace\>><rsub|\<Delta\><rsub|+>>,<wide*|<wide|u|\<bar\>><rsub|j>-<wide|u|\<bar\>><rsub|j-1>|\<wide-underbrace\>><rsub|\<Delta\><rsub|->>).
+  </equation*>
+
+  Recap: Newton interpolation. Suppose we have <with|mode|math|n> points
+  <with|mode|math|x<rsub|j>> with values <with|mode|math|y<rsub|j>>. Look for
+  polynomial of degree \ <with|mode|math|n-1> such that
+  <with|mode|math|p(x<rsub|j>)=y<rsub|j>>. First review Lagrange polynomials
+  and Lagrange interpolation <with|mode|math|(l<rsub|i>(x<rsub|j>=\<delta\><rsub|i,j>)>.
+  (omitted) Next up, Newton interpolation:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|y[x<rsub|i>]>|<cell|=>|<cell|y<rsub|i>>>|<row|<cell|y[x<rsub|i>,x<rsub|i+1>]>|<cell|=>|<cell|<frac|y[x<rsub|i+1>]-y[x<rsub|i>]|x<rsub|i+1>-x<rsub|i>>>>|<row|<cell|y[x<rsub|i>,x<rsub|i+1>,x<rsub|i+2>]>|<cell|=>|<cell|<frac|y[x<rsub|i+1>,x<rsub|i+2>]-y[x<rsub|i>,x<rsub|i+1>]|x<rsub|i+2>-x<rsub|i>>>>|<row|<cell|>|<cell|\<ldots\>>|<cell|>>>>
+  </eqnarray*>
+
+  Then
+
+  <\equation*>
+    p(x)=y[x<rsub|0>]+y[x<rsub|0>,x<rsub|1>](x-x<rsub|0>)+y[x<rsub|0>,x<rsub|1>,x<rsub|2>](x-x<rsub|0>)(x-x<rsub|1>)+y[x<rsub|0>,x<rsub|1>,x<rsub|2>,x<rsub|3>](x-x<rsub|0>)(x-x<rsub|1>)(x-x<rsub|2>).
+  </equation*>
+
+  But we are doing <em|reconstruction>, not interpolation. How can we convert
+  reconstruction to interpolation? Consider that we're looking for a
+  <with|mode|math|p(x)> such that
+
+  <\equation*>
+    <frac|1|\<Delta\>x><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>p(x)=<wide|u|\<bar\>><rsub|j><space|1em><with|mode|text|for>
+    j=1,2,\<ldots\>m.
+  </equation*>
+
+  Then define
+
+  <\equation*>
+    P(x)=<big|int><rsub|x<rsub|1/2>><rsup|x>P(\<xi\>)\<mathd\>\<xi\>
+  </equation*>
+
+  and observe
+
+  <\equation*>
+    P(x<rsub|j+1/2>)=<big|int><rsub|x<rsub|1/2>><rsup|x<rsub|j>+1/2>p(\<xi\>)\<mathd\>\<xi\>=<big|sum><rsub|l=1><rsup|j><big|int><rsub|x<rsub|l-1/2>><rsup|x<rsub|l+1/2>>\<Delta\>x<rsub|l><wide|u|\<bar\>><rsub|l><space|1em>j=0,\<ldots\>,m.
+  </equation*>
+
+  So how do we implement this? (Aargh, Fortran.) This algorithm works only
+  for a uniform mesh:
+
+  <\enumerate>
+    <item>Given the cell averages <with|mode|math|<wide|u|\<bar\>><rsub|0>>,
+    <with|mode|math|<wide|u|\<bar\>><rsub|1>>,
+    <with|mode|math|<wide|u|\<bar\>><rsub|2>>, <with|mode|math|\<ldots\>> as
+    <with|font-family|tt|ub(0),ub(1),...>
+
+    <item>Compute the un-divided differences of
+    <with|mode|math|<wide|\<b-u\>|\<bar\>>>.
+
+    <\with|font-family|tt>
+      do i=1,n
+
+      u(i,0)=ub(1)
+
+      enddo
+
+      do l=1,m
+
+      do i =1,n-l
+
+      u(i,l)=u(i+1,l-1)-u(i,l-1)
+
+      enddo
+
+      enddo
+    </with>
+
+    <item>At each location <with|mode|math|j+1/2>, to compute
+    <with|mode|math|u<rsub|j+1/2><rsup|->>, do
+
+    <\enumerate>
+      <item>Find the origin <with|font-family|tt|is(j)> of the ENO stencil
+
+      <\with|font-family|tt>
+        is(j)=j
+
+        do l=1,m
+
+        if (abs( u(is(j)-1,l) ) .lt. abs( u(is(j),l) ) ) is(j) = is(j)-1
+
+        enddo
+      </with>
+
+      <item>
+
+      <\equation*>
+        <wide*|<with|mode|text|<with|font-family|tt|un(j)>>|\<wide-underbrace\>><rsub|u<rsub|j+1/2><rsup|->>=<big|sum><rsub|<with|mode|text|<with|font-family|tt|l=is(j)>>><rsup|<with|mode|text|<with|font-family|tt|is(j)+m>>><with|mode|text|<with|font-family|tt|c(l-is(j),j-is(j-1))ub(1)>>
+      </equation*>
+
+      (consider that <with|font-family|tt|l-is(j),j-is(j)><with|mode|math|\<in\>{0,\<ldots\>,<with|mode|text|<with|font-family|tt|m>>}>).
+    </enumerate>
+  </enumerate>
+
+  <subsection|Weighted ENO Schemes>
+
+  Aside: Why is an interpolation polynomial monotone in the cell containing
+  the discontinuity of a jump function? Suppose we're using 6 points, with
+  the discontinuity in the middle cell. Then the polynomial is of degree
+  five. The mean value theorem tells us that the derivative has zeros in the
+  cells away from the discontinuity, of which there are four. But the
+  derivative is of degree four, so it can at most have four zeros: Nice!
+  There isn't one in the middle cell! (End aside)
+
+  Idea: Don't <em|choose> stencils like ENO, use a weighted sum.
+
+  Do it like this:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|u<rsub|j+1/2><rsup|->>|<cell|=>|<cell|w<rsub|1>u<rsub|j+1/2><rsup|(1)>+w<rsub|2>u<rsub|j+1/2><rsup|*(2)>+w<rsub|3>u<rsub|j+1/2><rsup|(3)>+\<cdots\>,>>>>
+  </eqnarray*>
+
+  where <with|mode|math|w<rsub|1>+w<rsub|2>+w<rsub|3>+\<cdots\>=1> and
+  <with|mode|math|u<rsub|j+1/2><rsup|(i)>> are the higher-order linear
+  reconstructions above. The goal is to choose the weights such that a higher
+  order than just with <with|mode|math|u<rsub|j+1/2><rsup|(i)>> is achieved,
+  if the desired smoothness is available. <with|color|red|what is
+  <with|mode|math|\<alpha\><rsub|i>>?>
+
+  <\itemize>
+    <item><with|mode|math|w<rsub|i>=\<alpha\><rsub|i>+O(\<Delta\>x<rsup|2>)>
+    in smooth regions
+
+    <item>If the stencil <with|mode|math|S<rsub|i>> contains a discontinuity,
+    then we would like to have <with|mode|math|w<rsub|i>=O(\<Delta\>x<rsup|4>)>.
+  </itemize>
+
+  We define a ``smoothness indicator'', <with|mode|math|\<beta\><rsub|i>> to
+  measure the smoothness of the function in stencil
+  <with|mode|math|s<rsub|i>>.
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<wide|w|~><rsub|i>>|<cell|=>|<cell|<frac|\<alpha\><rsub|i>|(\<varepsilon\>+\<beta\><rsub|i>)<rsup|2>><space|1em>i=1,2,3\<ldots\>,<space|1em>\<varepsilon\>=10<rsup|-6>,>>|<row|<cell|w<rsub|i>>|<cell|=>|<cell|<frac|<wide|w|~><rsub|i>|<wide|w|~><rsub|1>+<wide|w|~><rsub|2>+<wide|w|~><rsub|3>>.>>>>
+  </eqnarray*>
+
+  Shu's graduate student Jiang derived these smoothness indicators:
+
+  <\equation*>
+    \<beta\><rsub|i>=\<Delta\>x<rsup|2><big|int><rsub|I<rsub|j>>[(P<rprime|'>(x)<rsup|2>+\<Delta\>x<rsup|2>(P<rprime|''>(x)<rsup|2>)<rsup|2>]\<mathd\>x.
+  </equation*>
+
+  <em|Homework:>
+
+  <\itemize>
+    <item>Code for Burgers':
+
+    <\equation*>
+      <choice|<tformat|<table|<row|<cell|u<rsub|t>+<left|(><frac|u|2><right|)><rsup|2><rsub|x>=0>>|<row|<cell|u(x,0)=1+<frac|1|2>sin(x)>>>>>
+    </equation*>
+
+    Give same output as before
+
+    <\itemize>
+      <item>3rd order linear using <with|mode|math|u<rsub|>>
+
+      <\eqnarray*>
+        <tformat|<table|<row|<cell|u<rsub|j+1/2><rsup|->>|<cell|:>|<cell|<wide|u|\<bar\>><rsub|j-1>,<wide|u|\<bar\>><rsub|j>,<wide|u|\<bar\>><rsub|j+1>,>>|<row|<cell|u<rsub|j+1/2><rsup|+>>|<cell|:>|<cell|<wide|u|\<bar\>><rsub|j>,<wide|u|\<bar\>><rsub|j+1>,<wide|u|\<bar\>><rsub|j+2>.>>>>
+      </eqnarray*>
+
+      <item>3rd order TVD
+
+      <item>3rd order TVB (<with|mode|math|M=5>)
+
+      <item>3rd order ENO
+
+      <item>5th order ENO
+
+      <item>5th order WENO
+    </itemize>
+
+    Use 3rd order Runge-Kutta. (Might need to reduce
+    <with|mode|math|\<Delta\>t> to see the 5th order accuracy.)
+
+    (Remember to initialize with and compare to cell averages of IC and exact
+    solution!)
+  </itemize>
+
+  <subsection|Finite Difference Methods>
+
+  We are still considering
+
+  <\equation*>
+    u<rsub|t>+f(u)<rsub|x>=0,
+  </equation*>
+
+  which we hope to approximate by
+
+  <\equation*>
+    <frac|\<mathd\>u<rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x><left|(><wide|f|^><rsub|j+1/2>-<wide|f|^><rsub|j-1/2><right|)>=0
+  </equation*>
+
+  using
+
+  <\equation*>
+    <wide|f|^><rsub|j+1/2>=<wide|f|^>(u<rsub|j-p>,\<ldots\>,u<rsub|j+q>).
+  </equation*>
+
+  Our requirements are
+
+  <subsubsection|Accuracy>
+
+  Accuracy means
+
+  <\equation*>
+    <left|(><wide|f|^><rsub|j+1/2>-<wide|f|^><rsub|j-1/2><right|)>=f(u)<rsub|x>\|<rsub|x=x<rsub|j>>+O(\<Delta\>x<rsup|r>).
+  </equation*>
+
+  <\lemma>
+    (ENO paper by Shu, Osher) If there is a function <with|mode|math|h(x)>
+    (which depends on <with|mode|math|\<Delta\>x>) s.t.
+
+    <\equation*>
+      f(u(x))=<frac|1|\<Delta\>x><big|int><rsub|x-\<Delta\>x/2><rsup|x+\<Delta\>x/2>h(\<xi\>)\<mathd\>\<xi\>,
+    </equation*>
+
+    then
+
+    <\equation*>
+      f(u)<rsub|x>=<frac|1|\<Delta\>x><left|[>h<left|(>x+<frac|\<Delta\>x|2><right|)>-h<left|(>x-<frac|\<Delta\>x|2><right|)><right|]>.
+    </equation*>
+  </lemma>
+
+  All that's needed to obtain a higher-order scheme is now to approximate the
+  function <with|mode|math|h> to a certain degree of \ accuracy.
+
+  <\equation*>
+    {u<rsub|j>} <with|mode|text|given>\<Rightarrow\>{f(u<rsub|j>)}
+    <with|mode|text|given>\<Rightarrow\>{<wide|h|\<bar\>><rsub|j><right|}>
+    <with|mode|text|given><tree|<above|\<Longrightarrow\>|we
+    want>|reconstruction>{h<rsub|j+1/2>},
+  </equation*>
+
+  Then
+
+  <\equation*>
+    f(u<rsub|j>)=f(u(x<rsub|j>))=<frac|1|\<Delta\>x><big|int><rsub|x<rsub|j>-\<Delta\>x/2><rsup|x<rsub|j>+\<Delta\>x/2>h(\<xi\>)\<mathd\>\<xi\>=<wide|h|\<bar\>><rsub|j>.
+  </equation*>
+
+  <subsubsection|Stability>
+
+  For the moment, assume <with|mode|math|f<rprime|'>(u)\<geqslant\>0>.
+
+  <\enumerate>
+    <item>TVD Schemes:
+
+    <\enumerate>
+      <item>Use an upwind-biased stencil to compute
+      <with|mode|math|<wide|f|^><rsub|j+1/2>>, e.g.
+
+      <\equation*>
+        {f(u<rsub|j-1>),f(u<rsub|j>),f(u<rsub|j+1>)}\<rightarrow\><wide|f|^><rsub|j+1/2>.
+      </equation*>
+
+      <item>limit <with|mode|math|<wide|f|^><rsub|j+1/2>-f(u<rsub|j>)=\<mathd\>f<rsub|j><rsup|+>>.
+
+      <\equation*>
+        \<mathd\>f<rsub|j><rsup|+(mod)>=minmod(\<mathd\>f<rsub|j><rsup|+>,f(u<rsub|j+1>),f(u<rsub|j>),f(u<rsub|j-1>)).
+      </equation*>
+
+      Then
+
+      <\equation*>
+        <wide|f|^><rsub|j+1/2><rsup|(mod)>=f(u<rsub|j>)+\<mathd\>f<rsub|j><rsup|+(mod)>.
+      </equation*>
+    </enumerate>
+  </enumerate>
+
+  Then use Harten's Lemma to prove TVD'ness. We only have the term
+  <with|mode|math|D<rsub|j-1/2>> since we have a unique wind direction by
+  assumption, in
+
+  <\equation*>
+    u<rsub|j><rsup|n+1>=u<rsup|n><rsub|j>-\<lambda\>(-C<rsub|j+1/2>(u<rsub|j+1><rsup|n>-u<rsub|j><rsup|n>)+D<rsub|j-1/2>(u<rsub|j><rsup|n>-u<rsub|j-1><rsup|n>)).
+  </equation*>
+
+  By brute force, we have
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|D<rsub|j-1/2>>|<cell|=>|<cell|<frac|f(u<rsub|j>)+\<mathd\>f<rsub|j><rsup|+(mod)>-f(u<rsub|j-1>)-\<mathd\>f<rsub|j-1><rsup|+(mod)>|u<rsub|j>-u<rsub|j-1>>>>|<row|<cell|>|<cell|=>|<cell|<frac|f(u<rsub|j>)-f(u<rsub|j-1>)+\<mathd\>f<rsub|j><rsup|+(mod)>-\<mathd\>f<rsub|j-1><rsup|+(mod)>|u<rsub|j>-u<rsub|j-1>>>>|<row|<cell|>|<cell|=>|<cell|<frac|f(u<rsub|j>)-f(u<rsub|j-1>)|u<rsub|j>-u<rsub|j-1>><left|[>1+<wide*|<frac|\<mathd\>f<rsub|j><rsup|+(mod)>|f(u<rsub|j>)-f(u<rsub|j-1>)>|\<wide-underbrace\>><rsub|0\<leqslant\>\<ast\>\<leqslant\>1>-<wide*|<frac|\<mathd\>f<rsub|j-1><rsup|+(mod)>|f(u<rsub|j>)-f(u<rsub|j-1>)>|\<wide-underbrace\>><rsub|0\<leqslant\>\<ast\>\<leqslant\>1><right|]>>>|<row|<cell|>|<cell|=>|<cell|
+    f<rprime|'>(\<xi\>)>>>>
+  </eqnarray*>
+
+  with
+
+  <\equation*>
+    0\<leqslant\>D<rsub|j-1/2>\<leqslant\>2max<rsub|u>\|f<rprime|'>(u)\|.
+  </equation*>
+
+  In order to lift the condition on the wind direction
+  (<with|mode|math|f<rprime|'>(u)\<geqslant\>0>), we need to consider only a
+  <em|subclass> of montone fluxes, namely those characterized by <em|flux
+  splitting>:
+
+  <\equation*>
+    <wide|f|^>(u<rsup|->,u<rsup|+>)=f<rsup|+>(u<rsup|->)+f<rsup|->(u<rsup|+>),
+  </equation*>
+
+  where\ 
+
+  <\itemize>
+    <item><with|mode|math|f(u)=f<rsup|+>(u)+f<rsup|->(u)>
+
+    <item><with|mode|math|<with|math-display|true|<frac|\<mathd\>f<rsup|+>(u)|\<mathd\>u>\<geqslant\>0,<space|1em><frac|\<mathd\>f<rsup|->(u)|\<mathd\>u>\<leqslant\>0.>>
+  </itemize>
+
+  One such example is Lax-Friedrichs: <with|mode|math|f<rsup|\<pm\>>(u)=<frac|1|2>(f(u)\<pm\>\<alpha\>u)>,
+  where <with|mode|math|\<alpha\>=max<rsub|u>\|f<rprime|'>(u)\|>.
+
+  <\itemize>
+    <item>Then use the previous (single-wind-direction) procedure w/
+    <with|mode|math|f<rsup|+>(u)> instead of <with|mode|math|f(u)>.
+
+    <item>The mirror-symetric (w.r.t. <with|mode|math|j+1/2>) procedure with
+    <with|mode|math|f<rsup|->(u)> instead of <with|mode|math|f(u)>.
+
+    <item>Thus we obtain <with|mode|math|<wide|f|^><rsub|j+1/2>>.
+  </itemize>
+
+  Summary of FV versus FD:
+
+  <tabular|<tformat|<cwith|1|1|1|-1|cell-bborder|0.5pt>|<cwith|1|-1|1|1|cell-rborder|0.5pt>|<table|<row|<cell|FV>|<cell|FD>>|<row|<cell|<with|mode|math|<wide|u|\<bar\>><rsub|j>=<frac|1|\<Delta\>x><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u(x,t)>>|<cell|<with|mode|math|u<rsub|j>=u(x<rsub|j>,t)>>>|<row|<cell|reconstruction
+  <with|mode|math|{<wide|u|\<bar\>><rsub|j>}\<rightarrow\>{u<rsub|j\<pm\>1/2>}>>|<cell|reconstruction
+  <with|mode|math|{f<rsup|\<pm\>>(u<rsub|j>)}\<rightarrow\>{<wide|f|^><rsup|\<pm\>><rsub|j+1/2>}>>>|<row|<cell|numerical
+  flux <with|mode|math|><with|mode|math|<wide|f|^>(u<rsub|j+1><rsup|->,u<rsub|j+1><rsup|+>)>>|<cell|numerical
+  flux <with|mode|math|<wide|f|^><rsub|j+1/2>=<wide|f|^><rsup|+><rsub|j+1/2>+<wide|f|^><rsub|j+1/2>>>>|<row|<cell|any
+  <with|mode|math|<wide|f|^>(\<uparrow\>,\<downarrow\>)>>|<cell|<em|splittable>
+  monotone flux <with|mode|math|<wide|f|^>(u<rsup|->,u<rsup|+>)=f<rsup|+>(u<rsup|->)+f<rsup|->(u<rsup|+>)>>>|<row|<cell|<with|mode|math|\<Delta\>x>
+  arbitrary (meshing unrestricted)>|<cell|<with|mode|math|\<Delta\>x> uniform
+  or smoothly mappable to uniform>>|<row|<cell|>|<cell|not much physics in
+  the derivation>>>>>
+
+  <section|Two Space Dimensions>
+
+  Now consider
+
+  <\equation*>
+    u<rsub|t>+f(u)<rsub|x>+g(u)<rsub|y>=0.
+  </equation*>
+
+  The good news are:
+
+  <\itemize>
+    <item>Theoretical properties of weak solutions, entropy solutions etc.
+    are the same as in 1D.
+
+    <item>All properties of monotone schmes (TVD, entropy condition,
+    <with|mode|math|L<rsub|1>>-contraction, ...) are still valid in 2D.
+  </itemize>
+
+  <\theorem>
+    <dueto|Goodman & LeVeque>In 2D, TVD schemes are at most first order
+    accurate.
+  </theorem>
+
+  <\proof>
+    (Very rough idea) Many things can happen in 2D:
+
+    <with|gr-mode|<tuple|group-edit|move>|gr-frame|<tuple|scale|1cm|<tuple|0.599999gw|0.300001gh>>|gr-geometry|<tuple|geometry|0.576018par|0.357724par|center>|<graphics|<line|<point|-4|3.7>|<point|-4|-1.6>>|<spline|<point|2.5|3.7>|<point|2.7|3.5>|<point|2.3|3.3>|<point|2.7|3>|<point|2.3|2.8>|<point|2.7|2.6>|<point|2.3|2.3>|<point|2.7|2.1>|<point|2.4|1.8>|<point|2.8|1.5>|<point|2.4|1.3>|<point|2.8|0.9>|<point|2.4|0.7>|<point|2.8|0.4>|<point|2.5|0.2>|<point|2.8|-0.1>|<point|2.4|-0.5>|<point|2.7|-0.7>|<point|2.4|-1>|<point|2.8|-1.3>|<point|2.4|-1.5>>|<text-at|1|<point|-4.9|1.7>>|<text-at|0|<point|-3.6|1.7>>|<text-at|1|<point|1.2|1.7>>|<text-at|0|<point|3.2|1.7>>|<text-at|Low
+    Total Variation|<point|-3.62369|-0.856181>>|<text-at|High
+    TV|<point|0.757833|-0.877348>>>>
+
+    \;
+  </proof>
+
+  ``TVD'' Schemes in the literature for <with|mode|math|n>D means schemes
+  which are TVD in 1D and are generalized o 2D in a dimension by dimension
+  fashion, like this:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>u<rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x><left|(><wide|f|^><rsub|j+1/2>-<wide|f|^><rsub|j-1/2><right|)>>|<cell|=>|<cell|0>>|<row|<cell|<with|mode|text|with>
+    <wide|f|^><rsub|j+1/2>\<leftarrow\>{f(u<rsub|j-1>),f(u<rsub|j>),f(u<rsub|j+1>)}>|<cell|>|<cell|>>>>
+  </eqnarray*>
+
+  becomes
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>u<rsub|i,j>|\<mathd\>t>+<frac|1|\<Delta\>x><left|(><wide|f|^><rsub|i+1/2,j>-<wide|f|^><rsub|i-1/2,j><right|)>+<frac|1|\<Delta\>y><left|(><wide|f|^><rsub|i,j+1/2>-<wide|f|^><rsub|i,j-1/2><right|)>>|<cell|=>|<cell|0>>|<row|<cell|<with|mode|text|with>
+    <wide|f|^><rsub|i+1/2,j>\<leftarrow\>{f(u<rsub|i-1,j>),f(u<rsub|i,j>),f(u<rsub|i+1,j>)}.>|<cell|>|<cell|>>>>
+  </eqnarray*>
+
+  They really are <em|not> TVD in more than one dimension.
+
+  One good property we have in more than one dimension is a <em|maximum
+  principle>: Given a scheme in Harten form, i.e.
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|u<rsub|i,j><rsup|n+1>>|<cell|=u<rsub|i,j><rsup|n>>|<cell|-\<lambda\><rsub|x><left|[>-C<rsub|i+1/2,j>(u<rsub|i+1,j><rsup|n>-u<rsub|i,j><rsup|n>)+D<rsub|i-1/2,j>(u<rsub|i,j><rsup|n>-u<rsub|i-1,j>)]>>|<row|<cell|>|<cell|>|<cell|-\<lambda\><rsub|y><left|[>-C<rsub|i,j+1/2>(u<rsub|i,j+1><rsup|n>-u<rsub|i,j><rsup|n>)+D<rsub|i,j-1/2>(u<rsub|i,j><rsup|n>-u<rsub|i,j-1>)]>>>>
+  </eqnarray*>
+
+  with
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|C<rsub|i+1/2,j>,D<rsub|i-1/2,j>,1-\<lambda\><rsub|x>[C<rsub|i+1/2,j>+D<rsub|i+1/2,j>]>|<cell|\<geqslant\>>|<cell|0,>>|<row|<cell|C<rsub|i,j+1/2>,D<rsub|i,j-1/2>,1-\<lambda\><rsub|y>[C<rsub|i,j+1/2>+D<rsub|i,j+1/2>]>|<cell|\<geqslant\>>|<cell|0,>>>>
+  </eqnarray*>
+
+  we can proceed as follows:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|u<rsub|i,j><rsup|n+1>>|<cell|=>|<cell|<wide*|<left|[>1-\<lambda\><rsub|x>C<rsub|i+1/2,j>\<um\>\<lambda\><rsub|x>D<rsub|i-1/2,j>-\<lambda\><rsub|y>C<rsub|i,j+1/2>-\<lambda\><rsub|y>D<rsub|i,j-1/2>]|\<wide-underbrace\>><rsub|\<geqslant\>0>u<rsub|i,j><rsup|n>>>|<row|<cell|>|<cell|>|<cell|+\<lambda\><rsub|x><wide*|C<rsub|i+1/2,j>|\<wide-underbrace\>><rsub|\<geqslant\>0>u<rsub|i+1,j><rsup|n>+\<lambda\><rsub|x><wide*|D<rsub|i-1/2,j>|\<wide-underbrace\>><rsub|\<geqslant\>0>u<rsub|i-1,j><rsup|n>>>|<row|<cell|>|<cell|>|<cell|+\<lambda\><rsub|y><wide*|C<rsub|i,j+1/2>|\<wide-underbrace\>><rsub|\<geqslant\>0>u<rsub|i,j+1><rsup|n>+\<lambda\><rsub|y><wide*|D<rsub|i,j-1/2>|\<wide-underbrace\>><rsub|\<geqslant\>0>u<rsub|i,j-1><rsup|n>.>>>>
+  </eqnarray*>
+
+  Thus
+
+  <\equation*>
+    min(stencil)\<leqslant\>u<rsub|i,j><rsup|n+1>\<leqslant\>max(stencil)
+  </equation*>
+
+  because it is a convex combination of the values in the stencil.
+
+  <subsection|FV methods in 2D>
+
+  Next, let's consider FV methods in 2D. Let
+
+  <\equation*>
+    <wide|<wide|u|\<bar\>>|~><rsub|i,j>=<frac|1|\<Delta\>x\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>u(x,y,t)\<mathd\>x*\<mathd\>y,
+  </equation*>
+
+  where we note that
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<wide|\<cdot\>|~>>|<cell|<with|mode|text|is>>|<cell|<with|mode|text|the
+    cell-averaging operator in <with|mode|math|y>>,>>|<row|<cell|<wide|\<cdot\>|\<bar\>>>|<cell|<with|mode|text|is>>|<cell|<with|mode|text|the
+    cell-averaging operator in <with|mode|math|x>>.>>>>
+  </eqnarray*>
+
+  Next,
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|>|<cell|>|<cell|<frac|1|\<Delta\>x\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f(u)<rsub|x>\<mathd\>x*\<mathd\>y>>|<row|<cell|>|<cell|=>|<cell|f*(u(x<rsub|i+1/2>,y,t))-f(u(x<rsub|i-1/2>,y,t)).>>>>
+  </eqnarray*>
+
+  Thus
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>|\<mathd\>t><wide|<wide|u|\<bar\>>|~><rsub|i,j>+<frac|1|\<Delta\>x><left|[><with|color|blue|<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i+1/2>,y,t))\<mathd\>y>-<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i-1/2>,y,t))\<mathd\>y<right|]>>|<cell|>|<cell|>>|<row|<cell|+<frac|1|\<Delta\>y><left|[><with|color|orange|<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j+1/2>,t))\<mathd\>x>-<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j-1/2>,t))\<mathd\>x<right|]>>|<cell|=>|<cell|0.>>>>
+  </eqnarray*>
+
+  The equality <with|mode|math|\<ast\>> is what breaks when we switch to a
+  nonlinear equation.
+
+  FV Scheme:
+
+  <\equation*>
+    <frac|\<mathd\>|\<mathd\>t><wide|<wide|u|\<bar\>>|~><rsub|i,j>+<frac|1|\<Delta\>x><left|[><with|color|blue|<wide|f|^><rsub|i+1/2,j>>-<wide|f|^><rsub|i-1/2,j><right|]>+<frac|1|\<Delta\>y><left|[><with|color|orange|<wide|g|^><rsub|i,j+1/2>>-<wide|g|^><rsub|i,j-1/2><right|]>=0.
+  </equation*>
+
+  <subsubsection|The Linear Case>
+
+  Let's consider a simple case to start:
+
+  <\equation*>
+    u<rsub|t>+a*u<rsub|x>+b*u<rsub|y>=0<space|1em>\<Rightarrow\><space|1em>f(u)=a*u,<space|1em>g(u)=b*u.
+  </equation*>
+
+  In this case, we only have to perform <em|2 reconstructions per point>, so
+  that
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>|\<mathd\>t><wide|<wide|u|\<bar\>>|~><rsub|i,j>+<frac|1|\<Delta\>x><left|[><with|color|blue|<wide*|<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i+1/2>,y,t))\<mathd\>y|\<wide-underbrace\>><rsub|<wide|f|~><rsub|i+1/2,j>=a*<wide|u|~><rsub|i+1/2,j><above|=|<with|mode|text|*>>f(<wide|u|~><rsub|i+1/2,j>)>>-<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i-1/2>,y,t))\<mathd\>y<right|]>>|<cell|>|<cell|>>|<row|<cell|+<frac|1|\<Delta\>y><left|[><with|color|orange|<wide*|<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j+1/2>,t))\<mathd\>x|\<wide-underbrace\>><rsub|<wide|g|\<bar\>><rsub|i,j+1/2>>>-<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j-1/2>,t))\<mathd\>x<right|]>>|<cell|=>|<cell|0.>>>>
+  </eqnarray*>
+
+  <subsubsection|The Nonlinear Case>
+
+  In general, if <with|mode|math|f(u)> and <with|mode|math|g(u)> are
+  nonlinear, then we have to perform one reconstructions for each point of
+  the stencil, i.e. many times along one cut line through the stencil.
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|>|<cell|>|<cell|{<wide|u|~><rsub|i+1/2,j>}<above|\<longrightarrow\>|<with|mode|text|1D
+    rec>>{u<rsub|i+1/2,j+w<rsub|k>>}\<longrightarrow\>{f(u<rsub|i+1/2,j+w<rsub|k>>)}<above|\<longrightarrow\>|<with|mode|text|num.int.>>{<wide|f|^><rsub|i+1/2,j>}>>|<row|<cell|>|<cell|<above|\<nearrow\>|<with|mode|text|1D
+    rec>>>|<cell|>>|<row|<cell|{<wide|<wide|u|\<bar\>>|~><rsub|i,j>}>|<cell|>|<cell|>>|<row|<cell|>|<cell|<above|\<searrow\>|<with|mode|text|1D
+    rec>>>|<cell|>>|<row|<cell|>|<cell|>|<cell|{<wide|u|\<bar\>><rsub|i,j+1/2>}<above|\<longrightarrow\>|<with|mode|text|1D
+    rec>>{u<rsub|i+\<omega\><rsub|k>,j+1/2>}\<longrightarrow\>{f(u<rsub|i+\<omega\><rsub|k>,j+1/2>)}<above|\<longrightarrow\>|<with|mode|text|num.int.>>{<wide|f|^><rsub|i,j+1/2>}>>>>
+  </eqnarray*>
+
+  <\remark>
+    These considerations only matter if we are interested in order of
+    accuracy three or greater. If we are concerned with only second order
+    accuracy, then
+
+    <\equation*>
+      <wide|<wide|u|\<bar\>>|~><rsub|i,j>=u(x<rsub|i>,y<rsub|j>)+O(\<Delta\>x<rsup|2>,\<Delta\>y<rsup|2>)
+    </equation*>
+
+    is all we need.
+  </remark>
+
+  <subsection|Finite Difference Methods>
+
+  We are still considering
+
+  <\equation*>
+    u<rsub|t>+f(u)<rsub|x>+g(u)<rsub|y>=0,
+  </equation*>
+
+  but we switch the focus of our approximation to <em|actual point values>:
+
+  <\equation*>
+    u<rsub|i,j>=u(x<rsub|i>,y<rsub|j>,t)
+  </equation*>
+
+  to get the discretized conservation law
+
+  <\equation*>
+    <frac|\<mathd\>u<rsub|i,j>|\<mathd\>t>+<frac|1|\<Delta\>x><left|[><wide|f|^><rsub|i+1/2,j>-<wide|f|^><rsub|i-1/2,j><right|]>+<frac|1|\<Delta\>y><left|[><wide|g|^><rsub|i,j+1/2>-<wide|g|^><rsub|i,j-1/2><right|]>.
+  </equation*>
+
+  We need
+
+  <\equation*>
+    <frac|1|\<Delta\>x><left|[><wide|f|^><rsub|i+1/2,j>-<wide|f|^><rsub|i-1/2,j><right|]>=f(u)<rsub|x>\|<rsub|x=x<rsub|j>,y=y<rsub|j>>+O(\<Delta\>x<rsup|r>,\<Delta\>y<rsup|r>)
+  </equation*>
+
+  for accuracy. This is identical to the 1D routine with fixed
+  <with|mode|math|j>.
+
+  <section|Systems of Conservation Laws>
+
+  <\equation*>
+    \<b-u\><rsub|t>+\<b-f\>(\<b-u\>)<rsub|x>=\<b-0\>
+  </equation*>
+
+  <with|mode|math|\<b-u\>> is a vector, and so is <with|mode|math|\<b-f\>>.
+  For the moment, <with|mode|math|x> is still only 1-dimensional.
+
+  <\example>
+    Compressible flow:
+
+    <\equation*>
+      \<b-u\>=<matrix|<tformat|<table|<row|<cell|\<rho\>>>|<row|<cell|\<rho\>v>>|<row|<cell|E>>>>>,<space|1em>\<b-f\>(\<b-u\>)=<matrix|<tformat|<table|<row|<cell|\<rho\>v<rsup|2>>>|<row|<cell|\<rho\>v+p>>|<row|<cell|v(E+p)>>>>>,
+    </equation*>
+
+    where <with|mode|math|\<rho\>> is density, <with|mode|math|v> is
+    velocity, <with|mode|math|E> is total energy and <with|mode|math|p> is
+    pressure. For a <em|<with|mode|math|\<gamma\>>-law gas>, for example, we
+    could have the constitutive relationship
+
+    <\equation*>
+      E=<frac|p|\<gamma\>-1>+<frac|1|2>\<rho\>v<rsup|2>.
+    </equation*>
+
+    E.g. for air <with|mode|math|\<gamma\>=14>.
+  </example>
+
+  (Now, drop the bold-for-vector notation.)
+
+  <subsection|A First Attempt: Generalize Methods from AM255>
+
+  <\example>
+    <dueto|From 255>If <with|mode|math|f(u)=A*u>, then we have the equation
+
+    <\equation>
+      <label|eq:hyperbolic-system>u<rsub|t>+A*u<rsub|x>=0
+    </equation>
+
+    If <with|mode|math|A> has only real eigenvalues and a complete set of
+    eigenvectors, then (<reference|eq:hyperbolic-system>) is called
+    <em|hypberbolic>. Consider
+
+    <\equation*>
+      A*r<rsub|i>=\<lambda\><rsub|i>r<rsub|i>,
+    </equation*>
+
+    so that
+
+    <\equation*>
+      A*R=R*<wide*|diag(\<lambda\><rsub|1>,\<ldots\>,\<lambda\><rsub|n>)|\<wide-underbrace\>><rsub|\<Lambda\>>,
+    </equation*>
+
+    where <with|mode|math|R> has the vectors <with|mode|math|r<rsub|i>> in
+    its columns. Then we obtain
+
+    <\equation*>
+      R<rsup|-1>A*R=\<Lambda\>.
+    </equation*>
+
+    The rows <with|mode|math|l<rsub|i>> of <with|mode|math|R<rsup|-1>> are
+    called the <em|left eigenvectors> of <with|mode|math|A>, with
+    <with|mode|math|l<rsub|i>A=\<lambda\><rsub|i>l<rsub|i>> with
+    <with|mode|math|l<rsub|i>r<rsub|j>=\<delta\><rsub|i,j>>.
+
+    Now, perform a change of variables, namely
+    <with|mode|math|v=R<rsup|-1>u>, so that
+
+    <\equation>
+      <label|eq:hyperbolic-scheme>v<rsub|t>+\<Lambda\>v<rsub|x>=0.
+    </equation>
+  </example>
+
+  The goal for the nonlinear case is to take the lessons from the linear
+  case, but rewrite the scheme (<reference|eq:hyperbolic-scheme>) so that it
+  only acts on <with|mode|math|u>. If all the <em|eigenvalues are positive>,
+  then we can rewrite the upwind scheme (now reinstating
+  bold-face-for-vector, with index for <with|mode|math|x> location)
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>\<b-v\><rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x>\<Lambda\><left|[>\<b-v\><rsub|j>-\<b-v\><rsub|j-1><right|]>>|<cell|=>|<cell|\<b-0\>>>|<row|<cell|\<Leftrightarrow\><frac|\<mathd\>\<b-u\><rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x>R\<Lambda\>R<rsup|-1>[<wide*|R\<b-v\><rsub|j>|\<wide-underbrace\>><rsub|\<b-u\><rsub|j>>-R\<b-v\><rsub|j-1>]>|<cell|=>|<cell|\<b-0\>>>|<row|<cell|\<Leftrightarrow\><frac|\<mathd\>\<b-u\><rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x>A[\<b-u\><rsub|j>-\<b-u\><rsub|j-1>]>|<cell|=>|<cell|\<b-0\>.>>>>
+  </eqnarray*>
+
+  If we do not have the above eigenvalue condition, then we need a good way
+  to write the resulting system concisely. Why not start with some
+  notation...
+
+  <\equation*>
+    a<rsup|+>\<assign\><choice|<tformat|<table|<row|<cell|a>|<cell|a\<geqslant\>0,>>|<row|<cell|0>|<cell|<with|mode|text|otherwise>,>>>>><space|1em>a<rsup|->\<assign\><choice|<tformat|<table|<row|<cell|0>|<cell|<with|mode|text|otherwise>>>|<row|<cell|a>|<cell|a\<leqslant\>0>>>>>.
+  </equation*>
+
+  Thus <with|mode|math|\|a\|=a<rsup|+>-a<rsup|->> and
+  <with|mode|math|a=a<rsup|+>+a<rsup|->>. This notation has natural
+  generalizations to matrices and vectors. We obtain the following scheme in
+  <with|mode|math|\<b-v\>>:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>\<b-v\><rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x><left|{>\<Lambda\><rsup|+><left|[>\<b-v\><rsub|j>-\<b-v\><rsub|j-1><right|]>+\<Lambda\><rsup|-><left|[>\<b-v\><rsub|j+1>-\<b-v\><rsub|j><right|]><right|}>>|<cell|=>|<cell|\<b-0\>>>|<row|<cell|\<Leftrightarrow\><frac|\<mathd\>\<b-u\><rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x><left|{><wide*|R\<Lambda\><rsup|+>R<rsup|-1>|\<wide-underbrace\>><rsub|A<rsup|+>\<assign\>><left|[>\<b-u\><rsub|j>-\<b-u\><rsub|j-1><right|]>+<wide*|R\<Lambda\><rsup|->R<rsup|-1>|\<wide-underbrace\>><rsub|A<rsup|->\<assign\>><left|[>\<b-u\><rsub|j+1>-\<b-u\><rsub|j><right|]><right|}>>|<cell|=>|<cell|\<b-0\>.>>>>
+  </eqnarray*>
+
+  Note the slightly ambiguous notation here--<with|mode|math|A<rsup|+>> is
+  not the positive part of <with|mode|math|A> in the above sense, even though
+  <with|mode|math|A=A<rsup|+>+A<rsup|->> still holds.
+
+  <subsection|How to Generalize Scalar Higher-Order Schemes to Systems>
+
+  We are still considering
+
+  <\equation*>
+    u<rsub|t>+A*u<rsub|x>=0.
+  </equation*>
+
+  <\enumerate>
+    <item>Find the eigenvalues of <with|mode|math|A>, hence
+    <with|mode|math|\<Lambda\>>
+
+    Also find the eigenvectors of <with|mode|math|A>, hence
+    <with|mode|math|R> and <with|mode|math|R<rsup|-1>>.
+
+    <item>At each point that we need to compute a flux or a reconstruction,
+    say at <with|mode|math|x<rsub|j+1/2>>, do the following
+
+    <\enumerate>
+      <item><with|mode|math|\<b-v\><rsub|i>=R<rsup|-1>\<b-u\><rsub|i>>
+      (<with|mode|math|i=j-p,\<ldots\>j+q>)
+
+      <item>Use the scalar subroutine to each component of
+      <with|mode|math|\<b-v\>> to obtain a reconstruction
+      <with|mode|math|\<b-v\><rsub|j+1/2>>.
+
+      <item><with|mode|math|\<b-u\><rsub|j+1/2>=R\<b-v\><rsub|j+1/2>>.
+    </enumerate>
+  </enumerate>
+
+  Now, why should we do this transformation instead of just applying the
+  scalar subroutine to <with|mode|math|\<b-u\>>? Consider this example:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|(v<rsub|1>)<rsub|t>+(v<rsub|1>)<rsub|x>>|<cell|=>|<cell|0,>>|<row|<cell|(v<rsub|2>)<rsub|t>+(v<rsub|2>)<rsub|x>>|<cell|=>|<cell|0.>>>>
+  </eqnarray*>
+
+  Any combination of <with|mode|math|u> is bound to develop <em|two shocks>,
+  travelling at different speeds. If however we calculate <with|mode|math|v>,
+  then we retain the two nicely separated shocks. To drive home the point,
+  ENO always counts on the fact that it can find a stencil near a shock where
+  the function is smooth. For a point ``<em|trapped>'' between two shocks,
+  this assumption is violated, and we will lose something.
+
+  Also note that this procedure only makes sense if you are doing something
+  nonlinear in step 2b.
+
+  Next, note that if our discussion is targetted at generalizing to nonlinear
+  conservation laws. Consequently, it is really pointless to actually carry
+  out steps 2a and 2c each time unless the matrix <with|mode|math|A> is
+  actually changing as it will be.
+
+  <\note>
+    <strong|``Theorem'':> All results about stability and convergence carry
+    over to the case of <em|linear systems> if the numerical schemes use the
+    above the ``characteristic'' procedure.
+  </note>
+
+  <subsection|The Nonlinear Case>
+
+  If we consider the equation
+
+  <\equation*>
+    \<b-u\><rsub|t>+\<b-f\>(\<b-u\>)<rsub|x>=\<b-0\>,
+  </equation*>
+
+  then
+
+  <\itemize>
+    <item>There is essentially no theory.
+
+    <item>The numerical procedure is essentially identical to that for the
+    linear system case performed in (local) characteristic fields.
+  </itemize>
+
+  <em|Additional Homework:> (This+HW4 due Nov 29)
+
+  <\enumerate>
+    <item>Add third order finite difference version to HW4.
+  </enumerate>
 </body>
 
 <\initial>
@@ -1549,26 +2425,44 @@
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|1|1>>
-    <associate|auto-10|<tuple|2.1.4|9>>
-    <associate|auto-11|<tuple|2.1.5|9>>
-    <associate|auto-12|<tuple|2.1.6|9>>
-    <associate|auto-13|<tuple|2.1.7|10>>
-    <associate|auto-14|<tuple|2.2|14>>
-    <associate|auto-15|<tuple|2.2.1|15>>
-    <associate|auto-16|<tuple|2.2.2|?>>
-    <associate|auto-17|<tuple|4|?>>
-    <associate|auto-2|<tuple|1|4>>
-    <associate|auto-3|<tuple|2|5>>
-    <associate|auto-4|<tuple|3|6>>
-    <associate|auto-5|<tuple|2|7>>
-    <associate|auto-6|<tuple|2.1|8>>
-    <associate|auto-7|<tuple|2.1.1|8>>
-    <associate|auto-8|<tuple|2.1.2|9>>
-    <associate|auto-9|<tuple|2.1.3|9>>
-    <associate|eq:burgers-sin|<tuple|3|1>>
-    <associate|eq:claw-integral|<tuple|4|1>>
+    <associate|auto-1|<tuple|<uninit>|1>>
+    <associate|auto-10|<tuple|2.1.3|9>>
+    <associate|auto-11|<tuple|2.1.4|9>>
+    <associate|auto-12|<tuple|2.1.5|9>>
+    <associate|auto-13|<tuple|2.1.6|9>>
+    <associate|auto-14|<tuple|2.1.7|10>>
+    <associate|auto-15|<tuple|2.2|14>>
+    <associate|auto-16|<tuple|2.2.1|15>>
+    <associate|auto-17|<tuple|2.2.2|17>>
+    <associate|auto-18|<tuple|4|19>>
+    <associate|auto-19|<tuple|2.3|21>>
+    <associate|auto-2|<tuple|1|1>>
+    <associate|auto-20|<tuple|2.4|22>>
+    <associate|auto-21|<tuple|2.5|23>>
+    <associate|auto-22|<tuple|2.5.1|23>>
+    <associate|auto-23|<tuple|2.5.2|23>>
+    <associate|auto-24|<tuple|3|24>>
+    <associate|auto-25|<tuple|3.1|26>>
+    <associate|auto-26|<tuple|3.1.1|26>>
+    <associate|auto-27|<tuple|3.1.2|26>>
+    <associate|auto-28|<tuple|3.2|27>>
+    <associate|auto-29|<tuple|4|27>>
+    <associate|auto-3|<tuple|1|4>>
+    <associate|auto-30|<tuple|4.1|27>>
+    <associate|auto-31|<tuple|4.2|28>>
+    <associate|auto-32|<tuple|4.3|29>>
+    <associate|auto-4|<tuple|2|5>>
+    <associate|auto-5|<tuple|3|6>>
+    <associate|auto-6|<tuple|2|7>>
+    <associate|auto-7|<tuple|2.1|8>>
+    <associate|auto-8|<tuple|2.1.1|8>>
+    <associate|auto-9|<tuple|2.1.2|9>>
+    <associate|eq:255-system|<tuple|6|?>>
+    <associate|eq:burgers-sin|<tuple|3|2>>
+    <associate|eq:claw-integral|<tuple|4|2>>
     <associate|eq:gottlieb-pde|<tuple|5|13>>
+    <associate|eq:hyperbolic-scheme|<tuple|7|28>>
+    <associate|eq:hyperbolic-system|<tuple|6|27>>
     <associate|eq:scalar-claw|<tuple|1|1>>
     <associate|eq:scalar-claw-ic|<tuple|2|1>>
     <associate|the:linear-all-junk|<tuple|14|13>>
@@ -1578,67 +2472,129 @@
 <\auxiliary>
   <\collection>
     <\associate|figure>
-      <tuple|normal||<pageref|auto-2>>
+      <tuple|normal||<pageref|auto-3>>
 
       <tuple|normal|Illustration of Lax's entropy condition. Characteristics
-      are going ``into'' shocks.|<pageref|auto-3>>
+      are going ``into'' shocks.|<pageref|auto-4>>
 
-      <tuple|normal||<pageref|auto-4>>
+      <tuple|normal||<pageref|auto-5>>
 
-      <tuple|normal||<pageref|auto-17>>
+      <tuple|normal|Why TVD schemes don't do so well near smooth
+      extrema.|<pageref|auto-18>>
     </associate>
     <\associate|toc>
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>One-Dimensional
-      Scalar Conservation Laws> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
+      of contents> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Theory
+      of One-Dimensional Scalar Conservation Laws>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-2><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Numerics>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-5><vspace|0.5fn>
+      <no-break><pageref|auto-6><vspace|0.5fn>
 
       <with|par-left|<quote|1.5fn>|2.1<space|2spc>Examples of conservative
       schemes <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-6>>
+      <no-break><pageref|auto-7>>
 
       <with|par-left|<quote|3fn>|2.1.1<space|2spc>The Godunov Scheme
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-7>>
+      <no-break><pageref|auto-8>>
 
       <with|par-left|<quote|3fn>|2.1.2<space|2spc>The Lax-Friedrichs Scheme
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-8>>
+      <no-break><pageref|auto-9>>
 
       <with|par-left|<quote|3fn>|2.1.3<space|2spc>The local Lax-Friedrichs
       Scheme <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-9>>
+      <no-break><pageref|auto-10>>
 
       <with|par-left|<quote|3fn>|2.1.4<space|2spc>Roe Scheme
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-10>>
+      <no-break><pageref|auto-11>>
 
       <with|par-left|<quote|3fn>|2.1.5<space|2spc>Engquist-Osher Scheme
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-11>>
+      <no-break><pageref|auto-12>>
 
       <with|par-left|<quote|3fn>|2.1.6<space|2spc>Lax-Wendroff Scheme
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-12>>
+      <no-break><pageref|auto-13>>
 
       <with|par-left|<quote|3fn>|2.1.7<space|2spc>MacCormack Scheme
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-13>>
+      <no-break><pageref|auto-14>>
 
       <with|par-left|<quote|1.5fn>|2.2<space|2spc>Higher-order TVD Schemes
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-14>>
+      <no-break><pageref|auto-15>>
 
       <with|par-left|<quote|3fn>|2.2.1<space|2spc>General Framework of a
       Conservative Finite-Volume Scheme <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-15>>
+      <no-break><pageref|auto-16>>
 
       <with|par-left|<quote|3fn>|2.2.2<space|2spc>Generalized MUSCL Scheme
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-16>>
+      <no-break><pageref|auto-17>>
+
+      <with|par-left|<quote|1.5fn>|2.3<space|2spc>Essentially Non-Oscillatory
+      Schemes <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-19>>
+
+      <with|par-left|<quote|1.5fn>|2.4<space|2spc>Weighted ENO Schemes
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-20>>
+
+      <with|par-left|<quote|1.5fn>|2.5<space|2spc>Finite Difference Methods
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-21>>
+
+      <with|par-left|<quote|3fn>|2.5.1<space|2spc>Accuracy
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-22>>
+
+      <with|par-left|<quote|3fn>|2.5.2<space|2spc>Stability
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-23>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Two
+      Space Dimensions> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-24><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|3.1<space|2spc>FV methods in 2D
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-25>>
+
+      <with|par-left|<quote|3fn>|3.1.1<space|2spc>The Linear Case
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-26>>
+
+      <with|par-left|<quote|3fn>|3.1.2<space|2spc>The Nonlinear Case
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-27>>
+
+      <with|par-left|<quote|1.5fn>|3.2<space|2spc>Finite Difference Methods
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-28>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Systems
+      of Conservation Laws> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-29><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|4.1<space|2spc>A First Attempt: Generalize
+      Methods from AM255 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-30>>
+
+      <with|par-left|<quote|1.5fn>|4.2<space|2spc>How to Generalize Scalar
+      Higher-Order Schemes to Systems <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-31>>
+
+      <with|par-left|<quote|1.5fn>|4.3<space|2spc>The Nonlinear Case
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-32>>
     </associate>
   </collection>
 </auxiliary>
