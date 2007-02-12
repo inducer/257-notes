@@ -123,6 +123,14 @@
     <with|par-left|1.5fn|4.3<space|2spc>The Nonlinear Case
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-32>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|5<space|2spc>Discontinuous
+    Galerkin method> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-33><vspace|0.5fn>
+
+    <with|par-left|1.5fn|5.1<space|2spc>Some Theoretical Properties of the
+    Scheme <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-34>>
   </table-of-contents>
 
   <section|Theory of One-Dimensional Scalar Conservation Laws>
@@ -1344,7 +1352,12 @@
     with <with|mode|math|C<rsub|j+1/2>\<geqslant\>0>,
     <with|mode|math|D<rsub|j+1/2>\<geqslant\>0>,
     <with|mode|math|1-\<lambda\>(C<rsub|j+1/2>+D<rsub|j+1/2>)\<geqslant\>0>
-    and <with|mode|math|\<lambda\>=\<Delta\>t/\<Delta\>x>, then it is TVD.
+    and <with|mode|math|\<lambda\>=\<Delta\>t/\<Delta\>x>, then it is TVD. As
+    a matter of notation, we have
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<Delta\><rsub|+>u<rsub|j>>|<cell|=>|<cell|u<rsub|j+1>-u<rsub|j>,>>|<row|<cell|\<Delta\><rsub|->u<rsub|j>>|<cell|=>|<cell|u<rsub|j>-u<rsub|j-1>.>>>>
+    </eqnarray*>
   </lemma>
 
   <\proof>
@@ -2415,6 +2428,231 @@
   <\enumerate>
     <item>Add third order finite difference version to HW4.
   </enumerate>
+
+  <with|color|red|[one class's worth of material is missing here.]>
+
+  <section|The Discontinuous Galerkin Method>
+
+  <\equation*>
+    u<rsub|t>+f(u)<rsub|x>=0.
+  </equation*>
+
+  To begin a FV discretization, we rewrite this as
+
+  <\equation*>
+    <frac|1|\<Delta\>t><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>(u<rsub|t>+f(u)<rsub|x>)\<mathd\>x=0,
+  </equation*>
+
+  which results in:
+
+  <\equation*>
+    <frac|\<mathd\><wide|u|\<bar\>><rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x<rsub|j>><left|(>f(u<rsub|j+1/2>)-f(u<rsub|j-1/2>)<right|)>=0
+  </equation*>
+
+  FV in its full glory is
+
+  <\equation*>
+    <frac|\<mathd\><wide|u|\<bar\>><rsub|j>|\<mathd\>t>+<frac|1|\<Delta\>x<rsub|j>><left|(><wide|f|^>(u<rsub|j+1/2><rsup|->,u<rsub|j+1/2><rsup|+>)-<wide|f|^>(u<rsub|j-1/2><rsup|->,u<rsub|j-1/2><rsup|+>)<right|)>,
+  </equation*>
+
+  where, to make this a scheme, we need a monotone flux
+  <with|mode|math|<wide|f|^>(u<rsup|->,u<rsup|+>)>, which needs to satisfy
+  the following criteria:
+
+  <\itemize>
+    <item><with|mode|math|<wide|f|^>(\<uparrow\>,\<downarrow\>)>,
+
+    <item><with|mode|math|<wide|f|^>(u,u)=u>,
+
+    <item>Lipschitz continuous.
+  </itemize>
+
+  For DG, we do something different. We multiply the PDE by a ``test
+  function'' <with|mode|math|v>, then integrate the result over the interval
+  <with|mode|math|(x<rsub|j-1/2>,x<rsub|j+1/2>)>
+
+  <\equation*>
+    <big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>(u<rsub|t>+f(u)<rsub|x>)v*\<mathd\>x=0.
+  </equation*>
+
+  Now consider <with|mode|math|u> and <with|mode|math|v> both from a
+  finite-dimensional function space <with|mode|math|V<rsub|h>>, where
+  <with|mode|math|h=max(x<rsub|j+1/2>,x<rsub|j-1/2>)>. The space is then
+  given by
+
+  <\equation*>
+    V<rsub|h>={w:w\|<rsub|I<rsub|j>>\<in\>\<cal-P\><rsup|k>(I<rsub|j>)},
+  </equation*>
+
+  where <with|mode|math|I<rsub|j>=(x<rsub|j-1/2>,x<rsub|j+1/2>)> and
+  <with|mode|math|\<cal-P\><rsup|k>(I<rsub|j>)> is a collection of
+  polynomials of degree<with|mode|math|\<leqslant\>k> on cell
+  <with|mode|math|I<rsub|j>>. We observe <with|mode|math|dim
+  V<rsub|h>=N\<cdot\>(k+1)>. Then perform integration by parts and write
+
+  <\equation*>
+    <big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u<rsub|t>v-<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>f(u)v<rsub|x>*\<mathd\>x+f(u<rsub|j+1/2>)v<rsub|j+1/2>-f(u<rsub|j-1/2>)v<rsub|j-1/2>=0.
+  </equation*>
+
+  <\equation*>
+    \;
+  </equation*>
+
+  To make this into a scheme: find <with|mode|math|u\<in\>V<rsub|h>> such
+  that
+
+  <\equation*>
+    <big|int><rsub|I<rsub|j>>u<rsub|t>v*\<mathd\>x-<big|int><rsub|I<rsub|j>>f(u)v<rsub|x>\<mathd\>x+<wide*|f(u<rsub|j+1/2>)v<rsub|j+1/2>-f(u<rsub|j-1/2>)v<rsub|j-1/2>|\<wide-underbrace\>><rsub|?>=0
+  </equation*>
+
+  is true for any test function <with|mode|math|v\<in\>V<rsub|h>>. But the
+  term marked ``?'' is meaningless, since the functions are double-valued at
+  the spots in question. To motivate a meaning for the term, consider the
+  following: If we take the test function
+
+  <\equation*>
+    v=<choice|<tformat|<table|<row|<cell|1>|<cell|x\<in\>I<rsub|j>,>>|<row|<cell|0>|<cell|<with|mode|text|elsewhere>,>>>>>
+  </equation*>
+
+  we recover
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<big|int><rsub|I<rsub|j>>u<rsub|t>*\<mathd\>x+f(u<rsub|j+1/2>)<wide*|v<rsub|j+1/2>|\<wide-underbrace\>><rsub|<with|mode|text|from
+    left>>-f(u<rsub|j-1/2>)<wide*|v<rsub|j-1/2>|\<wide-underbrace\>><rsub|<with|mode|text|from
+    right>>>|<cell|=>|<cell|0>>|<row|<cell|<big|int><rsub|I<rsub|j>>u<rsub|t>*\<mathd\>x+f(u<rsub|j+1/2>)-f(u<rsub|j-1/2>)>|<cell|=>|<cell|0,>>>>
+  </eqnarray*>
+
+  which is exactly reminiscent of the FV scheme, motivating the equality
+
+  <\equation*>
+    f(u<rsub|j+1/2>)-f(u<rsub|j-1/2>)=<wide|f|^>(u<rsub|j+1/2><rsup|->,u<rsub|j+1/2><rsup|+>)-<wide|f|^>(u<rsub|j-1/2><rsup|->,u<rsub|j-1/2><rsup|+>)
+  </equation*>
+
+  and thus the scheme
+
+  <\equation*>
+    <big|int><rsub|I<rsub|j>>u<rsub|t>v*\<mathd\>x-<big|int><rsub|I<rsub|j>>f(u)v<rsub|x>\<mathd\>x+<wide|f|^>(u<rsub|j+1/2><rsup|->,u<rsub|j+1/2><rsup|+>)-<wide|f|^>(u<rsub|j-1/2><rsup|->,u<rsub|j-1/2><rsup|+>)=0.
+  </equation*>
+
+  Pick a basis for <with|mode|math|V<rsub|h>>:
+
+  <\equation*>
+    V<rsub|h>={\<varphi\><rsub|j><rsup|(l)>:1\<leqslant\>j\<leqslant\>N,0\<leqslant\>l\<leqslant\>k}.
+  </equation*>
+
+  For example, we could take
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|\<varphi\><rsub|j><rsup|(0)>(x)>|<cell|=>|<cell|\<b-1\><rsub|I<rsub|j>>(x),>>|<row|<cell|\<varphi\><rsub|j><rsup|(1)>(x)>|<cell|=>|<cell|(x-x<rsub|j>)\<b-1\><rsub|I<rsub|j>>(x),>>|<row|<cell|\<varphi\><rsub|j><rsup|(2)>(x)>|<cell|=>|<cell|(x-x<rsub|j>)<rsup|2>\<b-1\><rsub|I<rsub|j>>(x),>>|<row|<cell|>|<cell|\<vdots\>>|<cell|>>>>
+  </eqnarray*>
+
+  then
+
+  <\equation*>
+    u(x,t)=<big|sum><rsub|l=1><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x),<space|1em>x\<in\>I<rsub|j>.
+  </equation*>
+
+  Now take <with|mode|math|v=\<varphi\><rsub|j><rsup|(m)>(x)>,
+  <with|mode|math|m=0,1,\<ldots\>,l> and put that into our scheme
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x)<right|)><rsub|t>\<varphi\><rsub|j><rsup|(m)>(x)\<mathd\>x>|<cell|>|<cell|>>|<row|<cell|-<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>f<left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x)<right|)><frac|\<mathd\>|\<mathd\>x>\<varphi\><rsub|j><rsup|(m)>(x)\<mathd\>x>|<cell|>|<cell|>>|<row|<cell|+<wide|f|^><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x<rsub|j+1/2>),<big|sum><rsub|l=0><rsup|k>u<rsub|j+1><rsup|(l)>(t)\<varphi\><rsub|j+1><rsup|(l)>(x<rsub|j+1/2>)<right|)>>|<cell|>|<cell|>>|<row|<cell|-<wide|f|^><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j-1><rsup|(l)>(t)\<varphi\><rsub|j-1><rsup|(l)>(x<rsub|j-1/2>),<big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x<rsub|j-1/2>)<right|)>>|<cell|=>|<cell|0.>>>>
+  </eqnarray*>
+
+  <\equation*>
+    \;
+  </equation*>
+
+  Working with that yields
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<big|sum><rsub|l=0><rsup|k><frac|\<mathd\>|\<mathd\>t>u<rsub|j><rsup|(l)>(t)<wide*|<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>\<varphi\><rsub|j><rsup|(l)>(x)\<varphi\><rsub|j><rsup|(m)>(x)\<mathd\>x|\<wide-underbrace\>><rsub|(k+1)\<times\>(k+1)<with|mode|text|
+    matrix>>>|<cell|>|<cell|>>|<row|<cell|+F(\<b-u\><rsub|j-1>(t),\<b-u\><rsub|j>(t),\<b-u\><rsub|j+1>(t))>|<cell|=>|<cell|0,>>>>
+  </eqnarray*>
+
+  where
+
+  <\equation*>
+    \<b-u\><rsub|j>(t)=<matrix|<tformat|<table|<row|<cell|u<rsub|j><rsup|(0)>(t)>>|<row|<cell|\<vdots\>>>|<row|<cell|u<rsub|j><rsup|(k)>(t)>>>>>.
+  </equation*>
+
+  If the matrix above (also called the <em|local mass matrix>) is, we can
+  rewrite the scheme as
+
+  <\equation*>
+    <big|sum><rsub|l=0><rsup|k><frac|\<mathd\>|\<mathd\>t>\<b-u\><rsub|j>(t)+<wide|\<b-F\>|~>(\<b-u\><rsub|j-1>(t),\<b-u\><rsub|j>(t),\<b-u\><rsub|j+1>(t))=0,
+  </equation*>
+
+  which, if <with|mode|math|<wide|\<b-F\>|~>> is locally Lipschitz (which it
+  is), gives a well-defined scheme. If we have a linear PDE
+  <with|mode|math|f(u)=A*u>, where <with|mode|math|A=A(x,t)>, then the scheme
+  becomes
+
+  <\equation*>
+    <frac|\<mathd\>\<b-u\><rsub|j>(t)|\<mathd\>t>+<left|[>B<rsub|j-1>\<b-u\><rsub|j-1>+C<rsub|j>\<b-u\><rsub|j>(t)+D<rsub|j+1>\<b-u\><rsub|j+1>(t)<right|]>=0,
+  </equation*>
+
+  where the three matrices <with|mode|math|B<rsub|j-1>>,
+  <with|mode|math|C<rsub|j>>, <with|mode|math|D<rsub|j+1>> (each of size
+  <with|mode|math|(k+1)\<times\>(k+1))> do not depend on
+  <with|mode|math|\<b-u\>>.
+
+  <subsection|Some Theoretical Properties of the Scheme>
+
+  This scheme satisfies the cell entropy inequality for the square entropy
+  <with|mode|math|U(u)=u<rsup|2>/2>. Recall the general entropy inequality,
+  where for an entropy <with|mode|math|U> satisfying
+  <with|mode|math|U<rprime|''>(u)\<geqslant\>0> and a matching flux
+
+  <\equation*>
+    F(u)=<big|int><rsup|u>U<rprime|'>(u)f<rprime|'>(u)\<mathd\>u,
+  </equation*>
+
+  we have
+
+  <\equation*>
+    U(u)<rsub|t>+F(u)<rsub|x>\<leqslant\>0
+  </equation*>
+
+  in some weak sense.
+
+  <\proof>
+    Take <with|mode|math|v=u> in the scheme:
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<big|int><rsub|I<rsub|j>>u<rsub|t>u*\<mathd\>x-<big|int><rsub|I<rsub|j>><wide*|f(u)u<rsub|x>*|\<wide-underbrace\>><rsub|g(u)<rsub|x>>\<mathd\>x+<wide|f|^><rsub|j+1/2>u<rsub|j+1/2><rsup|->-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+>>|<cell|=>|<cell|0>>|<row|<cell|<frac|\<mathd\>|\<mathd\>t><left|(><big|int><frac|u<rsup|2>|2>*\<mathd\>x<right|)>-g(u<rsub|j+1/2><rsup|->)+g(u<rsub|j-1/2><rsup|+>)+<wide|f|^><rsub|j+1/2>u<rsub|j+1/2><rsup|->-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+>>|<cell|=>|<cell|0>>|<row|<cell|<frac|\<mathd\>|\<mathd\>t><left|(><big|int><frac|u<rsup|2>|2>*\<mathd\>x<right|)>+<wide|F|^><rsub|j+1/2>-<wide|F|^><rsub|j-1/2>+<wide*|<left|[>-g(u<rsub|j-1/2><rsup|->)+<wide|f|^><rsub|j-1/2>u<rsub|j-1/2>+g(u<rsub|j-1/2><rsup|+>)-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+><right|]>|\<wide-underbrace\>><rsub|\<Theta\><rsub|j-1/2>>>|<cell|=>|<cell|0>>>>
+    </eqnarray*>
+
+    where we have taken
+
+    <\equation*>
+      g(u)=<big|int><rsup|u>f(u)\<mathd\>u,<space|1em>g<rprime|'>(u)=f(u)
+    </equation*>
+
+    and
+
+    <\equation*>
+      <wide|F|^><rsub|j+1/2>=-g(u<rsub|j+1/2><rsup|->)+<wide|f|^><rsub|j+1/2>u<rsub|j+1/2><rsup|->,
+    </equation*>
+
+    where we observe that <with|mode|math|<wide|F|^>> is consistent, i.e.
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<wide|F|^>(u,u)>|<cell|=>|<cell|g(u)+f(u)u>>|<row|<cell|>|<cell|<above|=|?>>|<cell|<big|int><rsup|u>u*f<rprime|'>(u)*\<mathd\>u>>|<row|<cell|>|<cell|\<leftarrow\>>|<cell|<big|int><rsup|u>u\<mathd\>f(u)=u*f(u)-<wide*|<big|int><rsup|u>f(u)\<mathd\>u|\<wide-underbrace\>><rsub|g(u)>.>>>>
+    </eqnarray*>
+
+    We would like to show <with|mode|math|\<Theta\><rsub|j-1/2>\<geqslant\>0>
+    to prove the cell entropy inequality, i.e. the term
+    above<with|mode|math|\<leqslant\>0>.
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<Theta\>>|<cell|=>|<cell|-g(u<rsup|->)-<wide|f|^>(u<rsup|->,u<rsup|+>)u<rsup|+>+g(u<rsup|+>)-<wide|f|^>(u<rsup|->,u<rsup|+>)u<rsup|+>>>|<row|<cell|>|<cell|=>|<cell|g(u<rsup|+>)-g(u<rsup|->)-<wide|f|^>(u<rsup|->,u<rsup|+>)(u<rsup|+>-u<rsup|->)>>|<row|<cell|>|<cell|=>|<cell|g<rprime|'>(\<xi\>)(u<rsup|+>)(u<rsup|+>-u<rsup|->)-<wide|f|^>(u<rsup|->,u<rsup|+>)(u<rsup|+>-u<rsup|->)>>|<row|<cell|>|<cell|=>|<cell|(u<rsup|+>-u<rsup|->)(f(\<xi\>)-<wide|f|^>(u<rsup|->,u<rsup|+>))>>|<row|<cell|>|<cell|=>|<cell|(u<rsup|+>-u<rsup|->)(f(\<xi\>,\<xi\>)-<wide|f|^>(u<rsup|->,u<rsup|+>)).>>>>
+    </eqnarray*>
+
+    After a simple case distinction on <with|mode|math|u<rsup|->\<lessgtr\>\<xi\>\<lessgtr\>u<rsup|+>>
+    and using <with|mode|math|<wide|f|^>(\<uparrow\>,\<downarrow\>)>, we find
+    <with|mode|math|\<Theta\>\<geqslant\>0>.
+  </proof>
 </body>
 
 <\initial>
@@ -2442,7 +2680,7 @@
     <associate|auto-22|<tuple|2.5.1|23>>
     <associate|auto-23|<tuple|2.5.2|23>>
     <associate|auto-24|<tuple|3|24>>
-    <associate|auto-25|<tuple|3.1|26>>
+    <associate|auto-25|<tuple|3.1|25>>
     <associate|auto-26|<tuple|3.1.1|26>>
     <associate|auto-27|<tuple|3.1.2|26>>
     <associate|auto-28|<tuple|3.2|27>>
@@ -2451,6 +2689,8 @@
     <associate|auto-30|<tuple|4.1|27>>
     <associate|auto-31|<tuple|4.2|28>>
     <associate|auto-32|<tuple|4.3|29>>
+    <associate|auto-33|<tuple|5|29>>
+    <associate|auto-34|<tuple|5.1|31>>
     <associate|auto-4|<tuple|2|5>>
     <associate|auto-5|<tuple|3|6>>
     <associate|auto-6|<tuple|2|7>>
@@ -2461,7 +2701,7 @@
     <associate|eq:burgers-sin|<tuple|3|2>>
     <associate|eq:claw-integral|<tuple|4|2>>
     <associate|eq:gottlieb-pde|<tuple|5|13>>
-    <associate|eq:hyperbolic-scheme|<tuple|7|28>>
+    <associate|eq:hyperbolic-scheme|<tuple|7|27>>
     <associate|eq:hyperbolic-system|<tuple|6|27>>
     <associate|eq:scalar-claw|<tuple|1|1>>
     <associate|eq:scalar-claw-ic|<tuple|2|1>>
@@ -2595,6 +2835,14 @@
       <with|par-left|<quote|1.5fn>|4.3<space|2spc>The Nonlinear Case
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-32>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Discontinuous
+      Galerkin method> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-33><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|5.1<space|2spc>Some Theoretical Properties
+      of the Scheme <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-34>>
     </associate>
   </collection>
 </auxiliary>
