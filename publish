@@ -1,2 +1,3 @@
 #! /bin/sh
-scp {257,godunov}.{tm,pdf} 257style.ts tikernet@70.98.54.24:drupal-files/news.tiker.net/download/academic/notes/257
+scp {257,godunov}.{tm,pdf} 257-missed-class.pdf 257style.ts \
+  tikernet@tiker.net:drupal-files/news.tiker.net/download/academic/notes/257

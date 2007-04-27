@@ -143,7 +143,7 @@
   <with|mode|math|t>.
 
   <\equation*>
-    <frac|\<mathd\>|\<mathd\>t><big|int><rsub|a><rsup|b>u(x,t)\<mathd\>x=f(u(a,t))-f(u(b,t))
+    <frac|\<mathd\>|\<mathd\>t><big|int><rsub|a><rsup|b>u(x,t)\<mathd\>x=f(u(b,t))-f(u(a,t))
   </equation*>
 
   is the integral form of (<reference|eq:scalar-claw>).
@@ -211,7 +211,7 @@
 
   It turns out the two are equivalent. (Not proven here.) Now, assume a
   solution that has two <with|mode|math|C<rsup|1>> segments separated by a
-  curve on which no regularity is demanded.
+  curve on which no regularity is demanded of <with|mode|math|u>.
 
   Then
 
@@ -314,13 +314,13 @@
   <with|mode|math|\<varphi\>\<geqslant\>0>.
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|<big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>(U(u<rsup|\<varepsilon\>>)<rsub|t>+F(u<rsup|\<varepsilon\>>)<rsub|x>)\<varphi\>*\<mathd\>x*\<mathd\>t>|<cell|\<leqslant\>>|<cell|\<varepsilon\><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>(U<rprime|'>(u<rsup|\<varepsilon\>>)u<rsup|\<varepsilon\>><rsub|x>)<rsub|x>*\<varphi\>\<mathd\>x*\<mathd\>t>>|<row|<cell|\<Rightarrow\><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>U(u<rsup|\<varepsilon\>>)\<varphi\><rsub|t>+F(u<rsup|\<varepsilon\>>)\<varphi\><rsub|x>*\<mathd\>x*\<mathd\>t>|<cell|\<leqslant\>>|<cell|\<varepsilon\><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>U<rprime|'>(u<rsup|\<varepsilon\>>)u<rsup|\<varepsilon\>><rsub|x>\<varphi\><rsub|x>\<mathd\>x*\<mathd\>t>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<varepsilon\><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>U(u<rsup|\<varepsilon\>>)\<varphi\><rsub|x,x>\<mathd\>x*\<mathd\>t>>>>
+    <tformat|<table|<row|<cell|<big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>(U(u<rsup|\<varepsilon\>>)<rsub|t>+F(u<rsup|\<varepsilon\>>)<rsub|x>)\<varphi\>*\<mathd\>x*\<mathd\>t>|<cell|\<leqslant\>>|<cell|\<varepsilon\><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>(U<rprime|'>(u<rsup|\<varepsilon\>>)u<rsup|\<varepsilon\>><rsub|x>)<rsub|x>*\<varphi\>\<mathd\>x*\<mathd\>t>>|<row|<cell|\<Rightarrow\><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>U(u<rsup|\<varepsilon\>>)\<varphi\><rsub|t>+F(u<rsup|\<varepsilon\>>)\<varphi\><rsub|x>*\<mathd\>x*\<mathd\>t>|<cell|\<geqslant\>>|<cell|\<varepsilon\><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>U<rprime|'>(u<rsup|\<varepsilon\>>)u<rsup|\<varepsilon\>><rsub|x>\<varphi\><rsub|x>\<mathd\>x*\<mathd\>t>>|<row|<cell|>|<cell|=>|<cell|\<varepsilon\><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>U(u<rsup|\<varepsilon\>>)\<varphi\><rsub|x,x>\<mathd\>x*\<mathd\>t>>>>
   </eqnarray*>
 
   DCT allows taking the limit. We get the <em|entropy inequality>
 
   <\equation*>
-    <big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>U(u)\<varphi\><rsub|t>+F(u)\<varphi\><rsub|x>*\<mathd\>x*\<mathd\>t\<leqslant\>0.
+    <big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>U(u)\<varphi\><rsub|t>+F(u)\<varphi\><rsub|x>*\<mathd\>x*\<mathd\>t\<geqslant\>0.
   </equation*>
 
   <em|Homework #1:>
@@ -352,8 +352,8 @@
     <with|mode|math|f<rprime|''>(u)\<less\>0> it is called <em|concave>.
   </definition>
 
-  Shocks must appear for genuinely nonlinear conservation laws must appear
-  under periodic or compactly supported initial conditions.
+  Shocks must appear for genuinely nonlinear conservation laws under periodic
+  or compactly supported initial conditions.
 
   Consider a box containing the support of a test function
   <with|mode|math|\<varphi\>\<in\>C<rsup|\<infty\>><rsub|c>(\<bbb-R\>\<times\>\<bbb-R\><rsup|+>)>
@@ -367,24 +367,23 @@
   <\eqnarray*>
     <tformat|<table|<row|<cell|0>|<cell|\<leqslant\>>|<cell|-<big|int><rsub|c><rsup|d><big|int><rsub|a><rsup|b>(U(u)\<varphi\><rsub|t>+F(u)\<varphi\><rsub|x>)\<mathd\>x\<mathd\>t>>|<row|<cell|>|<cell|=>|<cell|-<big|int><rsub|c><rsup|d><big|int><rsub|a><rsup|x(t)><wide*|(U(u)\<varphi\><rsub|t>+F(u)\<varphi\><rsub|x>)|\<wide-underbrace\>><rsub|(U,F)<rsup|T>\<cdot\>\<nabla\>\<varphi\>>\<mathd\>x\<mathd\>t-<big|int><rsub|c><rsup|d><big|int><rsub|x(t)><rsup|b>(U(u)\<varphi\><rsub|t>+F(u)\<varphi\><rsub|x>)\<mathd\>x\<mathd\>t>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|c><rsup|d><big|int><rsub|a><rsup|x(t)><wide*|(U(u)<rsub|t>+F(u)<rsub|x>)|\<wide-underbrace\>><rsub|=0>\<varphi\>
     \<mathd\>x \<mathd\>t-<big|int><rsub|\<partial\>\<Omega\><rsup|->>\<varphi\>(U(u),F(u))\<cdot\>\<b-n\>
-    \<mathd\>s-<big|int><rsub|\<Gamma\>>\<varphi\>(U(u),F(u))\<cdot\>\<b-n\>
-    \<mathd\>s+<big|int><rsub|\<Gamma\>>\<varphi\><frac|x<rprime|'>(t)U(u<rsup|->)-F(u<rsup|->)|<sqrt|1+(x<rprime|'>(t))<rsup|2>>>
-    \<mathd\>s+<big|int><rsub|\<Omega\><rsup|+>>(U(u)<rsub|t>+F(u)<rsub|x>)\<varphi\>
-    \<mathd\>x \<mathd\>t-<big|int><rsub|\<Gamma\>>\<varphi\><frac|x<rprime|'>(t)U(u<rsup|+>)-F(u<rsup|+>)|<sqrt|1+x<rprime|'>(t)<rsup|2>>>
+    \<mathd\>s-<big|int><rsub|\<partial\>\<Omega\><rsup|+>>\<varphi\>(U(u),F(u))\<cdot\>\<b-n\>
+    \<mathd\>s>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|\<Gamma\>>\<varphi\><frac|x<rprime|'>(t)U(u<rsup|->)-F(u<rsup|->)|<sqrt|1+(x<rprime|'>(t))<rsup|2>>>
+    \<mathd\>s-<big|int><rsub|\<Gamma\>>\<varphi\><frac|x<rprime|'>(t)U(u<rsup|+>)-F(u<rsup|+>)|<sqrt|1+x<rprime|'>(t)<rsup|2>>>
     \<mathd\>s>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|\<Gamma\>><frac|\<varphi\>|<sqrt|1+x<rprime|'>(t)<rsup|2>>><left|[>x<rprime|'>(t)(U(u<rsup|->)-U(u<rsup|+>))-(F(u<rsup|->)-F(u<rsup|+>))<right|]>\<mathd\>s.>>>>
   </eqnarray*>
 
   We obtain
 
   <\equation*>
-    x<rprime|'>(t)(U(u<rsup|->)-U(u<rsup|+>))-(F(u<rsup|->)-F(u<rsup|+>))\<geqslant\>0.
+    x<rprime|'>(t)(U(u<rsup|->)-U(u<rsup|+>))-(F(u<rsup|->)-F(u<rsup|+>))\<leqslant\>0.
   </equation*>
 
   If we introduce the notation <with|mode|math|<jump|f>\<assign\>f(u<rsup|+>)-f(u<rsup|->)>,
   then this condition becomes
 
   <\equation*>
-    x<rprime|'>(t)<jump|U>\<leqslant\><jump|F>.
+    x<rprime|'>(t)<jump|U>\<geqslant\><jump|F>.
   </equation*>
 
   <em|Oleinik entropy condition:> For all <with|mode|math|u> between
@@ -460,10 +459,13 @@
 
     <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.400001gw|0.2gh>>|gr-geometry|<tuple|geometry|0.733335par|0.366669par|center>|gr-line-arrows|none|gr-color|default|<graphics|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0|-1.9>|<point|0|3.7>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-4.5|0>|<point|5.1|0>>>|<spline|<point|-3.7|0>|<point|-3|1.3>|<point|-2.1|0>>|<spline|<point|-0.5|0>|<point|0.8|2.8>|<point|1.3|0>>|<spline|<point|2.1|0>|<point|3.2|0.9>|<point|4.2|0.6>|<point|5.1|1.2>>|<with|color|red|<spline|<point|-4.5|-0.9>|<point|-3.9|-0.7>|<point|-3.7|0>>>|<with|color|red|<spline|<point|-2.1|0>|<point|-1.3|-0.9>|<point|-0.5|0>>>|<with|color|red|<spline|<point|1.3|0>|<point|1.4|-0.7>|<point|2.1|0>>>|<point|-3.7|0>|<point|-2.1|0>|<point|-0.5|0>|<point|1.3|0>|<point|2.1|0>|<text-at|<with|mode|math|x>|<point|5.4|0>>|<text-at|<with|mode|math|u<rsup|\<varepsilon\>>-v<rsup|\<varepsilon\>>>|<point|0.3|3.7>>|<text-at|<with|mode|math|I<rsub|j>(t)>|<point|-1.5|0.2>>|<text-at|<with|mode|math|x<rsub|j+1/2>>|<point|-0.4|-0.4>>|<text-at|<with|mode|math|x<rsub|j-1/2>>|<point|-2.9|-0.5>>>>|>
 
-    Let's do it:
+    Let <with|mode|math|s<rsub|j>> be the sign of
+    <with|mode|math|u<rsup|\<varepsilon\>>-v<rsup|\<varepsilon\>>> on
+    <with|mode|math|I<rsub|j>> and consider, using Leibniz's rule, the
+    following:
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|>|<cell|>|<cell|<frac|\<mathd\>|\<mathd\>t><big|int><rsub|-\<infty\>><rsup|\<infty\>>\|u<rsup|\<varepsilon\>>(x,t)-v<rsup|\<varepsilon\>>(x,t)\|\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<frac|\<mathd\>|\<mathd\>t><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>\|u<rsup|\<varepsilon\>>(x,t)-v<rsup|\<varepsilon\>>(x,t)\|\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>s<rsub|j>(t)<left|[><wide*|u<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)-v<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)|\<wide-underbrace\>><rsub|0><right|]>x<rprime|'><rsub|j+1/2>(t)>>|<row|<cell|>|<cell|>|<cell|-s<rsub|j>(t)<left|[><wide*|u<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)-v<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)|\<wide-underbrace\>><rsub|0><right|]>x<rprime|'><rsub|j+1/2>(t)\<mathd\>x>>|<row|<cell|>|<cell|>|<cell|+<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>><wide*|s<rsub|j><rprime|'>*(t)|\<wide-underbrace\>><rsub|0>(u<rsup|\<varepsilon\>>(x,t)-v<rsup|\<varepsilon\>>(x,t))\<mathd\>x>>|<row|<cell|>|<cell|>|<cell|+<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>s<rsub|j>(t)(u<rsup|\<varepsilon\>><rsub|t>(x,t)-v<rsup|\<varepsilon\>><rsub|t>(x,t))\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>s<rsub|j>(t)(u<rsup|\<varepsilon\>><rsub|t>(x,t)-v<rsup|\<varepsilon\>><rsub|t>(x,t))\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>s<rsub|j>(t)<left|[>-f(u<rsup|\<varepsilon\>>(x,t))<rsub|x>+\<varepsilon\>u<rsup|\<varepsilon\>><rsub|x,x>(x,t)+f(v<rsup|\<varepsilon\>>(x,t))<rsub|x>-\<varepsilon\>v<rsub|x,x><rsup|\<varepsilon\>>(x,t)<right|]>\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j>s<rsub|j>(t)<left|{><wide*|-f(u<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t))+f(u<rsup|\<varepsilon\>>(x<rsub|j-1/2>(t),t))+f(v<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t))-f(v<rsup|\<varepsilon\>>(x<rsub|j-1/2>(t),t))|\<wide-underbrace\>><rsub|0>+\<varepsilon\><left|[><with|color|orange|u<rsub|x><rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)>-<with|color|blue|u<rsub|x><rsup|\<varepsilon\>>(x<rsub|j-1/2>(t),t)>-<with|color|orange|v<rsub|x><rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)>+<with|color|blue|u<rsub|x><rsup|\<varepsilon\>>(x<rsub|j-1/2>(t),t)><right|]><right|}>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|0.>>>>
+      <tformat|<table|<row|<cell|>|<cell|>|<cell|<frac|\<mathd\>|\<mathd\>t><big|int><rsub|-\<infty\>><rsup|\<infty\>>\|u<rsup|\<varepsilon\>>(x,t)-v<rsup|\<varepsilon\>>(x,t)\|\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<frac|\<mathd\>|\<mathd\>t><big|sum><rsub|j><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>\|u<rsup|\<varepsilon\>>(x,t)-v<rsup|\<varepsilon\>>(x,t)\|\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j>s<rsub|j>(t)<left|[><wide*|u<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)-v<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)|\<wide-underbrace\>><rsub|0><right|]>x<rprime|'><rsub|j+1/2>(t)>>|<row|<cell|>|<cell|>|<cell|-s<rsub|j>(t)<left|[><wide*|u<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)-v<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)|\<wide-underbrace\>><rsub|0><right|]>x<rprime|'><rsub|j+1/2>(t)>>|<row|<cell|>|<cell|>|<cell|+<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>><wide*|s<rsub|j><rprime|'>*(t)|\<wide-underbrace\>><rsub|0>(u<rsup|\<varepsilon\>>(x,t)-v<rsup|\<varepsilon\>>(x,t))\<mathd\>x>>|<row|<cell|>|<cell|>|<cell|+<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>s<rsub|j>(t)(u<rsup|\<varepsilon\>><rsub|t>(x,t)-v<rsup|\<varepsilon\>><rsub|t>(x,t))\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>s<rsub|j>(t)(u<rsup|\<varepsilon\>><rsub|t>(x,t)-v<rsup|\<varepsilon\>><rsub|t>(x,t))\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>s<rsub|j>(t)<left|[>-f(u<rsup|\<varepsilon\>>(x,t))<rsub|x>+\<varepsilon\>u<rsup|\<varepsilon\>><rsub|x,x>(x,t)+f(v<rsup|\<varepsilon\>>(x,t))<rsub|x>-\<varepsilon\>v<rsub|x,x><rsup|\<varepsilon\>>(x,t)<right|]>\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|j>s<rsub|j>(t)<left|{><wide*|-f(u<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t))+f(u<rsup|\<varepsilon\>>(x<rsub|j-1/2>(t),t))+f(v<rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t))-f(v<rsup|\<varepsilon\>>(x<rsub|j-1/2>(t),t))|\<wide-underbrace\>><rsub|0>+\<varepsilon\><left|[><with|color|orange|u<rsub|x><rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)>-<with|color|blue|u<rsub|x><rsup|\<varepsilon\>>(x<rsub|j-1/2>(t),t)>-<with|color|orange|v<rsub|x><rsup|\<varepsilon\>>(x<rsub|j+1/2>(t),t)>+<with|color|blue|v<rsub|x><rsup|\<varepsilon\>>(x<rsub|j-1/2>(t),t)><right|]><right|}>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|0.>>>>
     </eqnarray*>
 
     To see why the orange and blue parts together each are
@@ -559,7 +561,7 @@
     for <with|mode|math|\<varphi\>\<in\>C<rsup|1><rsub|0>>. Then
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|0>|<cell|=>|<cell|<big|sum><rsub|n><big|sum><rsub|j><left|(><frac|u<rsub|j><rsup|n+1>-u<rsub|j><rsup|n>|\<Delta\>t>+<frac|<wide|f|^><rsub|j+1/2>-<wide|f|^><rsub|j-1/2>|\<Delta\>x><right|)>\<varphi\><rsub|j><rsup|n>\<Delta\>x\<Delta\>t>>|<row|<cell|>|<cell|=>|<cell|-<big|sum><rsub|n><big|sum><rsub|j><left|(><frac|\<varphi\><rsub|j><rsup|n>-\<varphi\><rsub|j><rsup|n-1>|\<Delta\>t>u<rsub|j><rsup|n>+<frac|\<varphi\><rsub|j><rsup|n>-\<varphi\><rsub|j-1><rsup|n>|\<Delta\>x><right|)>\<Delta\>x\<Delta\>t>>|<row|<cell|>|<cell|<above|\<rightarrow\>|DCT,<with|mode|text|Conservativity>>>|<cell|<big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>(\<varphi\><rsub|t>u+\<varphi\><rsub|x>f(u))\<mathd\>x
+      <tformat|<table|<row|<cell|0>|<cell|=>|<cell|<big|sum><rsub|n><big|sum><rsub|j><left|(><frac|u<rsub|j><rsup|n+1>-u<rsub|j><rsup|n>|\<Delta\>t>+<frac|<wide|f|^><rsub|j+1/2>-<wide|f|^><rsub|j-1/2>|\<Delta\>x><right|)>\<varphi\><rsub|j><rsup|n>\<Delta\>x\<Delta\>t>>|<row|<cell|>|<cell|=>|<cell|-<big|sum><rsub|n><big|sum><rsub|j><left|(><frac|\<varphi\><rsub|j><rsup|n>-\<varphi\><rsub|j><rsup|n-1>|\<Delta\>t>u<rsub|j><rsup|n>+<frac|\<varphi\><rsub|j><rsup|n>-\<varphi\><rsub|j-1><rsup|n>|\<Delta\>x><wide|f|^><rsub|j+1/2><right|)>\<Delta\>x\<Delta\>t>>|<row|<cell|>|<cell|<above|\<rightarrow\>|DCT,<with|mode|text|Conservativity>>>|<cell|<big|int><rsub|0><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>(\<varphi\><rsub|t>u+\<varphi\><rsub|x>f(u))\<mathd\>x
       \<mathd\>t=0.>>>>
     </eqnarray*>
 
@@ -570,7 +572,7 @@
     Above, we used partial summation:
 
     <\equation*>
-      <big|sum><rsub|j=j<rsub|1>><rsup|j<rsub|2>>a<rsub|j>(b<rsub|j>-b<rsub|j-1>)=-<big|sum><rsub|j=j<rsub|1>><rsup|j<rsub|2>>(a<rsub|j+1>-a<rsub|j>)b-a<rsub|j<rsub|1>>b<rsub|j<rsub|i-1>>+a<rsub|j<rsub|2>>b<rsub|j<rsub|2>>.
+      <big|sum><rsub|j=j<rsub|1>><rsup|j<rsub|2>>a<rsub|j>(b<rsub|j>-b<rsub|j-1>)=-<big|sum><rsub|j=j<rsub|1>><rsup|j<rsub|2>>(a<rsub|j+1>-a<rsub|j>)b<rsub|j>-a<rsub|j<rsub|1>>b<rsub|j-1>+a<rsub|j<rsub|2>>b<rsub|j<rsub|2>>.
     </equation*>
   </remark>
 
@@ -624,7 +626,7 @@
   Then
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|<big|int><rsub|t<rsup|n>><rsup|t<rsup|n+1>><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>(u<rsub|t>+f(u)<rsub|x>)\<mathd\>x*\<mathd\>t>|<cell|=>|<cell|0>>|<row|<cell|<big|int><rsub|t<rsup|n>><rsup|t<rsup|n+1>><frac|\<mathd\>|\<mathd\>t><left|(><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u*\<mathd\>x<right|)>>|<cell|=>|<cell|0>>|<row|<cell|<frac|1|\<Delta\>x><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u*<rsup|n+1>\<mathd\>x-<frac|1|\<Delta\>x><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u*<rsup|n>\<mathd\>x+<frac|1|\<Delta\>x><big|int><rsub|t<rsup|n>><rsup|t<rsup|n+1>>f(u<rsub|j+1/2>)*\<mathd\>x-<frac|1|\<Delta\>x><big|int><rsub|t<rsup|n>><rsup|t<rsup|n+1>>f(u<rsub|j-1/2>)\<mathd\>x>|<cell|=>|<cell|0.>>>>
+    <tformat|<table|<row|<cell|<big|int><rsub|t<rsup|n>><rsup|t<rsup|n+1>><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>(u<rsub|t>+f(u)<rsub|x>)\<mathd\>x*\<mathd\>t>|<cell|=>|<cell|0>>|<row|<cell|<frac|1|\<Delta\>x><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u*<rsup|n+1>\<mathd\>x-<frac|1|\<Delta\>x><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u*<rsup|n>\<mathd\>x+<frac|1|\<Delta\>t><big|int><rsub|t<rsup|n>><rsup|t<rsup|n+1>>f(u<rsub|j+1/2>)*\<mathd\>x-<frac|1|\<Delta\>x><big|int><rsub|t<rsup|n>><rsup|t<rsup|n+1>>f(u<rsub|j-1/2>)\<mathd\>x>|<cell|=>|<cell|0.>>>>
   </eqnarray*>
 
   Now consider that for the Riemann solution <with|mode|math|u(x,t)> is a
@@ -897,7 +899,7 @@
     Then let
 
     <\equation*>
-      w<rsub|j>\<assign\>u<rsub|j>\<wedge\>v<rsub|j>=v<rsub|j>+(u<rsub|j>-v<rsub|j>)<rsup|\<upl\>>.<space|1em>(\<ast\>)
+      w<rsub|j>\<assign\>u<rsub|j>\<vee\>v<rsub|j>=v<rsub|j>+(u<rsub|j>-v<rsub|j>)<rsup|\<upl\>>.<space|1em>(\<ast\>)
     </equation*>
 
     We have
@@ -915,7 +917,7 @@
     Thus
 
     <\equation*>
-      G(w)<rsub|j>-G(v)<rsub|j>\<geqslant\>(G(w)<rsub|j>-G(v)<rsub|j>)<rsup|+>.
+      G(w)<rsub|j>-G(v)<rsub|j>\<geqslant\>(G(u)<rsub|j>-G(v)<rsub|j>)<rsup|+>.
     </equation*>
 
     Therefore
@@ -1180,7 +1182,7 @@
   Plug a linear term in there, and obtain
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|j\<Delta\>x-(n+1)\<Delta\>t>|<cell|=>|<cell|<big|sum><rsub|l>c<rsub|l>((j-l)\<delta\>x-n\<Delta\>t)>>|<row|<cell|-\<Delta\>t>|<cell|=>|<cell|\<Delta\>x<big|sum><rsub|l>(-l)c<rsub|l>>>|<row|<cell|<big|sum><rsub|l>l*c<rsub|l>>|<cell|=>|<cell|\<lambda\>>>>>
+    <tformat|<table|<row|<cell|j\<Delta\>x-(n+1)\<Delta\>t>|<cell|=>|<cell|<big|sum><rsub|l>c<rsub|l>((j-l)\<Delta\>x-n\<Delta\>t)>>|<row|<cell|-\<Delta\>t>|<cell|=>|<cell|\<Delta\>x<big|sum><rsub|l>(-l)c<rsub|l>>>|<row|<cell|<big|sum><rsub|l>l*c<rsub|l>>|<cell|=>|<cell|\<lambda\>>>>>
   </eqnarray*>
 
   For a quadratic term, we would get
@@ -1189,8 +1191,8 @@
     <big|sum><rsub|l>l<rsup|2>c<rsub|l>=\<lambda\><rsup|2>.
   </equation*>
 
-  So, now try to derive a contradiction from second-order accuracy to any of
-  the above. To that end, define
+  So, now try to derive a contradiction between any two of the above to
+  refute second-order. To that end, define
 
   <\equation*>
     \<b-a\>=(l<sqrt|c<rsub|l>>)<rsub|l=-k><rsup|k>,<space|1em>\<b-b\>=(<sqrt|c<rsub|l>>)<rsub|l=-k><rsup|k>
@@ -1262,7 +1264,7 @@
   Denote
 
   <\equation*>
-    <wide|u|\<bar\>><rsub|j>=<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u*\<mathd\>x.
+    <wide|u|\<bar\>><rsub|j>=<frac|1|\<Delta\>x><big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>u*\<mathd\>x.
   </equation*>
 
   Then
@@ -1286,9 +1288,8 @@
 
   For the time being, let's assume <with|mode|math|f<rprime|'>(u)\<geqslant\>0>
   and <with|mode|math|<wide|f|^><rsub|j+1/2>=f(<wide|u|\<bar\>><rsub|j>)>,
-  which is the numerical flux for Godunov, Roe, Engquist-Osher. If we don't
-  know the sign of <with|mode|math|f<rprime|'>(u)>, <with|color|red|then
-  what?>
+  which is the numerical flux for Godunov, Roe, Engquist-Osher. See below for
+  the case of unknown sign.
 
   <\equation*>
     <wide|f|^><rsub|j+1/2>=<wide|f|^>(<wide|u|\<bar\>><rsub|j>,<wide|u|\<bar\>><rsub|j+1>),
@@ -1308,9 +1309,9 @@
     <tformat|<table|<row|<cell|<wide|f|^><rsub|j+1/2><rsup|(1)>>|<cell|=>|<cell|f(u<rsub|j+1/2><rsup|(1)>)=f<left|(><frac|1|2>(<wide|u|\<bar\>><rsub|j>+<wide|u|\<bar\>><rsub|j+1>)<right|)>,>>|<row|<cell|<wide|f|^><rsub|j+1/2><rsup|(2)>>|<cell|=>|<cell|f(u<rsub|j+1/2><rsup|(2)>)=f<left|(><frac|1|2>(3<wide|u|\<bar\>><rsub|j>-<wide|u|\<bar\>><rsub|j-1>)<right|)>.>>>>
   </eqnarray*>
 
-  The above fluxes are 2nd order accurate, and are call the 2nd order central
-  and upwind flux, respectively. (<with|mode|math|u<rsup|(1)>> is gained from
-  the line connecting the cell centers at \ the cell averages of
+  The above fluxes are 2nd order accurate, and are called the 2nd order
+  central and upwind flux, respectively. (<with|mode|math|u<rsup|(1)>> is
+  gained from the line connecting the cell centers at \ the cell averages of
   <with|mode|math|I<rsub|j>> and <with|mode|math|I<rsub|j+1>>.
   <with|mode|math|u<rsup|(2)>> is the same for <with|mode|math|I<rsub|j>> and
   <with|mode|math|I<rsub|j-1>>.)
@@ -1364,13 +1365,13 @@
     Write
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n+1>>|<cell|=>|<cell|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>+\<lambda\>(C<rsub|j+3/2>\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j+1><rsup|n>-D<rsub|j+1/2>\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>-C<rsub|j+1/2>\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>+D<rsub|j-1/2>\<Delta\><rsub|-><wide|u|\<bar\>><rsub|j><rsup|n>)>>|<row|<cell|>|<cell|=>|<cell|[1-\<lambda\>(C<rsub|j+1/2>+D<rsub|j+1/2>)]\<Delta\>+<wide|u|\<bar\>><rsub|j><rsup|n>+\<lambda\>C<rsub|j+3/2>\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j+1><rsup|n>+\<lambda\>D<rsub|j-1/2>\<Delta\><rsub|-><wide|u|\<bar\>><rsub|j><rsup|n>.>>>>
+      <tformat|<table|<row|<cell|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n+1>>|<cell|=>|<cell|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>+\<lambda\>(C<rsub|j+3/2>\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j+1><rsup|n>-D<rsub|j+1/2>\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>-C<rsub|j+1/2>\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>+D<rsub|j-1/2>\<Delta\><rsub|-><wide|u|\<bar\>><rsub|j><rsup|n>)>>|<row|<cell|>|<cell|=>|<cell|[1-\<lambda\>(C<rsub|j+1/2>+D<rsub|j+1/2>)]\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>+\<lambda\>C<rsub|j+3/2>\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j+1><rsup|n>+\<lambda\>D<rsub|j-1/2>\<Delta\><rsub|-><wide|u|\<bar\>><rsub|j><rsup|n>.>>>>
     </eqnarray*>
 
     Thus
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n-1>\|>|<cell|\<leqslant\>>|<cell|<left|[>1-\<lambda\>(C<rsub|j+1/2>+D<rsub|j+1/2>)<right|]>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>\|+\<lambda\><wide*|C<rsub|j+3/2>\|\<Delta\>+<wide|u|\<bar\>><rsub|j+1><rsup|n>\||\<wide-underbrace\>><rsub|C<rsub|j<rprime|'>+1/2>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j<rprime|'>><rsup|n>\|>+\<lambda\><wide*|D<rsub|j-1/2>\|\<Delta\><rsub|-><wide|u|\<bar\>><rsub|j><rsup|n>\||\<wide-underbrace\>><rsub|D<rsub|j<rprime|''>+1/2>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j<rprime|''>><rsup|n>\|>.>>|<row|<cell|<big|sum><rsub|j>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n-1>\|>|<cell|\<leqslant\>>|<cell|<big|sum><rsub|j><left|[>1-\<lambda\>(C<rsub|j+1/2>+D<rsub|j+1/2>)+C<rsub|j+1/2>+D<rsub|j+1/2><right|]>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>\|>>|<row|<cell|TV(<wide|u|\<bar\>><rsub|j><rsup|n+1>)>|<cell|\<leqslant\>>|<cell|TV(u<rsub|j><rsup|n>),>>>>
+      <tformat|<table|<row|<cell|\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n-1>\|>|<cell|\<leqslant\>>|<cell|<left|[>1-\<lambda\>(C<rsub|j+1/2>+D<rsub|j+1/2>)<right|]>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>\|+\<lambda\><wide*|C<rsub|j+3/2>\|\<Delta\>+<wide|u|\<bar\>><rsub|j+1><rsup|n>\||\<wide-underbrace\>><rsub|C<rsub|j<rprime|'>+1/2>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j<rprime|'>><rsup|n>\|>+\<lambda\><wide*|D<rsub|j-1/2>\|\<Delta\><rsub|-><wide|u|\<bar\>><rsub|j><rsup|n>\||\<wide-underbrace\>><rsub|D<rsub|j<rprime|''>+1/2>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j<rprime|''>><rsup|n>\|>.>>|<row|<cell|<big|sum><rsub|j>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n-1>\|>|<cell|\<leqslant\>>|<cell|<big|sum><rsub|j><left|[>1-\<lambda\>(C<rsub|j+1/2>+D<rsub|j+1/2>)+\<lambda\>C<rsub|j+1/2>+\<lambda\>D<rsub|j+1/2><right|]>\|\<Delta\><rsub|+><wide|u|\<bar\>><rsub|j><rsup|n>\|>>|<row|<cell|TV(<wide|u|\<bar\>><rsub|j><rsup|n+1>)>|<cell|\<leqslant\>>|<cell|TV(u<rsub|j><rsup|n>),>>>>
     </eqnarray*>
 
     which proves the claim.
@@ -1511,7 +1512,7 @@
     </itemize>
   </quote-env>
 
-  2nd order reconstruction formulas:
+  3rd order reconstruction formulas:
 
   <\eqnarray*>
     <tformat|<table|<row|<cell|u<rsub|j+1/2><rsup|(1)>>|<cell|=>|<cell|<frac|1|3><wide|u|\<bar\>><rsub|j-2>-<frac|7|6><wide|u|\<bar\>><rsub|j-1>+<frac|11|6><wide|u|\<bar\>><rsub|j>,>>|<row|<cell|u<rsub|j+1/2><rsup|(2)>>|<cell|=>|<cell|-<frac|1|6><wide|u|\<bar\>><rsub|j-1>+<frac|5|6><wide|u|\<bar\>><rsub|j>-<frac|1|3><wide|u|\<bar\>><rsub|j+1>.>>|<row|<cell|u<rsub|j+1/2><rsup|(3)>>|<cell|=>|<cell|<frac|1|3><wide|u|\<bar\>><rsub|j>+<frac|5|6><wide|u|\<bar\>><rsub|j+1>-<frac|1|6><wide|u|\<bar\>><rsub|j+2>.>>>>
@@ -1580,7 +1581,7 @@
   Consider the following Taylor expansions:
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|u<rsub|j+1/2><rsup|->>|<cell|=>|<cell|u(x<rsub|j+1/2>)+O(\<Delta\>x<rsup|r>),<space|1em>r\<geqslant\>2>>|<row|<cell|>|<cell|=>|<cell|u(x<rsub|j>)+u<rsub|x>(x<rsub|j>)<frac|\<Delta\>x|2>+O(\<Delta\>x<rsup|2>).>>|<row|<cell|u<rsub|j>>|<cell|=>|<cell|<frac|1|\<Delta\>x><big|int><rsub|I<rsub|j>>u(x)\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<frac|1|\<Delta\>x><big|int><rsub|I<rsub|j>><left|[>u(x<rsub|j>)+u<rsub|x>(x-x<rsub|j>)+u<rsub|x,x><frac|(x-x<rsub|j>)<rsup|2>|2>+O(\<Delta\>x<rsup|3>)<right|]>\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|u(x<rsub|j>)+O(\<Delta\>x<rsup|2>).>>|<row|<cell|<wide|u|~><rsub|j>>|<cell|=>|<cell|u<rsub|j+1/2><rsup|->-<wide|u|\<bar\>><rsub|j>>>|<row|<cell|>|<cell|=>|<cell|<with|color|orange|u<rsub|x>(x<rsub|j>)><frac|\<Delta\>x|<with|color|red|2>>+O(\<Delta\>x<rsup|2>).>>|<row|<cell|<wide|u|\<bar\>><rsub|j+1>-<wide|u|\<bar\>><rsub|j>>|<cell|=>|<cell|u(x<rsub|j+1>)-u(x<rsub|j>)+O(\<Delta\>x<rsup|2>)>>|<row|<cell|>|<cell|=>|<cell|<with|color|orange|u<rsub|x>(x<rsub|j>)>\<Delta\>x+O(\<Delta\>x<rsup|2>)>>|<row|<cell|<wide|u|\<bar\>><rsub|j>-<wide|u|\<bar\>><rsub|j-1>>|<cell|=>|<cell|<with|color|orange|u<rsub|x>(x<rsub|j>)>\<Delta\>x+O(\<Delta\>x<rsup|2>).>>>>
+    <tformat|<table|<row|<cell|u<rsub|j+1/2><rsup|->>|<cell|=>|<cell|u(x<rsub|j+1/2>)+O(\<Delta\>x<rsup|r>),<space|1em>r\<geqslant\>2>>|<row|<cell|>|<cell|=>|<cell|u(x<rsub|j>)+u<rsub|x>(x<rsub|j>)<frac|\<Delta\>x|2>+O(\<Delta\>x<rsup|2>).>>|<row|<cell|<wide|u|\<bar\>><rsub|j>>|<cell|=>|<cell|<frac|1|\<Delta\>x><big|int><rsub|I<rsub|j>>u(x)\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<frac|1|\<Delta\>x><big|int><rsub|I<rsub|j>><left|[>u(x<rsub|j>)+u<rsub|x>(x-x<rsub|j>)+u<rsub|x,x><frac|(x-x<rsub|j>)<rsup|2>|2>+O(\<Delta\>x<rsup|3>)<right|]>\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|u(x<rsub|j>)+O(\<Delta\>x<rsup|2>).>>|<row|<cell|<wide|u|~><rsub|j>>|<cell|=>|<cell|u<rsub|j+1/2><rsup|->-<wide|u|\<bar\>><rsub|j>>>|<row|<cell|>|<cell|=>|<cell|<with|color|orange|u<rsub|x>(x<rsub|j>)><frac|\<Delta\>x|<with|color|red|2>>+O(\<Delta\>x<rsup|2>).>>|<row|<cell|<wide|u|\<bar\>><rsub|j+1>-<wide|u|\<bar\>><rsub|j>>|<cell|=>|<cell|u(x<rsub|j+1>)-u(x<rsub|j>)+O(\<Delta\>x<rsup|2>)>>|<row|<cell|>|<cell|=>|<cell|<with|color|orange|u<rsub|x>(x<rsub|j>)>\<Delta\>x+O(\<Delta\>x<rsup|2>)>>|<row|<cell|<wide|u|\<bar\>><rsub|j>-<wide|u|\<bar\>><rsub|j-1>>|<cell|=>|<cell|<with|color|orange|u<rsub|x>(x<rsub|j>)>\<Delta\>x+O(\<Delta\>x<rsup|2>).>>>>
   </eqnarray*>
 
   Observe that the second and third arguments of the minmod function--it is
@@ -1600,7 +1601,7 @@
   <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.400002gw|0.4gh>>|gr-geometry|<tuple|geometry|0.757724par|0.509147par|center>|gr-dash-style|default|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0|-3.1>|<point|0|4>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-5.6|0>|<point|6.5|0>>>|<spline|<point|-4|0>|<point|-2|3>|<point|0|0>|<point|2|-3>|<point|4|0>>|<point|-2.8|2.1>|<point|-2.1|2.9>|<point|-1|2.9>|<point|-0.7|2.1>|<spline|<point|-3.6|8.32667268468867e-17>|<point|-1.6|3.0>|<point|0.4|8.32667268468867e-17>|<point|2.4|-3.0>|<point|4.4|8.32667268468867e-17>>|<line|<point|-3|2.9>|<point|0.6|2.9>>|<line|<point|-3|3.2>|<point|0.5|3.2>>|<text-at|<with|mode|math|\<Delta\>x<rsup|2>>|<point|-3.6|2.9>>|<text-at||<point|5.6|-2.1>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|5.1|-2.1>|<point|4|-0.8>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|3.1|0.3>|<point|3.5|-1>>>|<text-at|exact
   solution after <with|mode|math|\<Delta\>t>|<point|3.6|-2.5>>|<text-at|initial
   condition|<point|2.9|0.6>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|1.2|4.3>|<point|-1.1|3.3>>>|<text-at|Consider
-  what TVD means here:|<point|1.3|4.1>>|<text-at|At most second
+  what TVD means here:|<point|1.3|4.1>>|<text-at|At most first
   order!|<point|2|3.3>>>>|Why TVD schemes don't do so well near smooth
   extrema.>
 
@@ -1673,7 +1674,8 @@
   <with|mode|math|U<rprime|''>(u)\<geqslant\>0>, and
 
   <\equation*>
-    F(u)=<big|int><rsup|u>U<rprime|'>(u)f<rprime|'>(u)\<mathd\>u=U<rprime|'>(u)f(u)-<big|int><rsup|u>U<rprime|''>(u)f(u).
+    F(u)=<big|int><rsup|u>U<rprime|'>(u)f<rprime|'>(u)\<mathd\>u<above|=|<with|mode|text|Integration
+    by parts>>U<rprime|'>(u)f(u)-<big|int><rsup|u>U<rprime|''>(u)f(u).
   </equation*>
 
   <\eqnarray*>
@@ -1689,7 +1691,7 @@
   Define
 
   <\equation*>
-    <wide|F|^><rsub|j+1/2>=U<rprime|'>(u)<wide|f|^>(u<rsub|j>,u<rsub|j+1>)-<big|int><rsup|u<rsub|j>>U<rprime|''>(u)f(u)\<mathd\>u.
+    <wide|F|^><rsub|j+1/2>=U<rprime|'>(u<rsub|j>)<wide|f|^>(u<rsub|j>,u<rsub|j+1>)-<big|int><rsup|u<rsub|j>>U<rprime|''>(u)f(u)\<mathd\>u.
   </equation*>
 
   Then
@@ -1757,7 +1759,7 @@
   Then define
 
   <\equation*>
-    P(x)=<big|int><rsub|x<rsub|1/2>><rsup|x>P(\<xi\>)\<mathd\>\<xi\>
+    P(x)=<big|int><rsub|x<rsub|1/2>><rsup|x>p(\<xi\>)\<mathd\>\<xi\>
   </equation*>
 
   and observe
@@ -1844,8 +1846,9 @@
   <with|mode|math|u<rsub|j+1/2><rsup|(i)>> are the higher-order linear
   reconstructions above. The goal is to choose the weights such that a higher
   order than just with <with|mode|math|u<rsub|j+1/2><rsup|(i)>> is achieved,
-  if the desired smoothness is available. <with|color|red|what is
-  <with|mode|math|\<alpha\><rsub|i>>?>
+  if the desired smoothness is available. Choose
+  <with|mode|math|\<alpha\><rsub|i>> such that the linear combination of
+  smaller stencils adds up to a high-order stencil.
 
   <\itemize>
     <item><with|mode|math|w<rsub|i>=\<alpha\><rsub|i>+O(\<Delta\>x<rsup|2>)>
@@ -1984,7 +1987,7 @@
       <item>limit <with|mode|math|<wide|f|^><rsub|j+1/2>-f(u<rsub|j>)=\<mathd\>f<rsub|j><rsup|+>>.
 
       <\equation*>
-        \<mathd\>f<rsub|j><rsup|+(mod)>=minmod(\<mathd\>f<rsub|j><rsup|+>,f(u<rsub|j+1>),f(u<rsub|j>),f(u<rsub|j-1>)).
+        \<mathd\>f<rsub|j><rsup|+(mod)>=minmod(\<mathd\>f<rsub|j><rsup|+>,f(u<rsub|j+1>)-f(u<rsub|j>),f(u<rsub|j>)-f(u<rsub|j-1>)).
       </equation*>
 
       Then
@@ -2006,8 +2009,7 @@
   By brute force, we have
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|D<rsub|j-1/2>>|<cell|=>|<cell|<frac|f(u<rsub|j>)+\<mathd\>f<rsub|j><rsup|+(mod)>-f(u<rsub|j-1>)-\<mathd\>f<rsub|j-1><rsup|+(mod)>|u<rsub|j>-u<rsub|j-1>>>>|<row|<cell|>|<cell|=>|<cell|<frac|f(u<rsub|j>)-f(u<rsub|j-1>)+\<mathd\>f<rsub|j><rsup|+(mod)>-\<mathd\>f<rsub|j-1><rsup|+(mod)>|u<rsub|j>-u<rsub|j-1>>>>|<row|<cell|>|<cell|=>|<cell|<frac|f(u<rsub|j>)-f(u<rsub|j-1>)|u<rsub|j>-u<rsub|j-1>><left|[>1+<wide*|<frac|\<mathd\>f<rsub|j><rsup|+(mod)>|f(u<rsub|j>)-f(u<rsub|j-1>)>|\<wide-underbrace\>><rsub|0\<leqslant\>\<ast\>\<leqslant\>1>-<wide*|<frac|\<mathd\>f<rsub|j-1><rsup|+(mod)>|f(u<rsub|j>)-f(u<rsub|j-1>)>|\<wide-underbrace\>><rsub|0\<leqslant\>\<ast\>\<leqslant\>1><right|]>>>|<row|<cell|>|<cell|=>|<cell|
-    f<rprime|'>(\<xi\>)>>>>
+    <tformat|<table|<row|<cell|D<rsub|j-1/2>>|<cell|=>|<cell|<frac|f(u<rsub|j>)+\<mathd\>f<rsub|j><rsup|+(mod)>-f(u<rsub|j-1>)-\<mathd\>f<rsub|j-1><rsup|+(mod)>|u<rsub|j>-u<rsub|j-1>>>>|<row|<cell|>|<cell|=>|<cell|<frac|f(u<rsub|j>)-f(u<rsub|j-1>)+\<mathd\>f<rsub|j><rsup|+(mod)>-\<mathd\>f<rsub|j-1><rsup|+(mod)>|u<rsub|j>-u<rsub|j-1>>>>|<row|<cell|>|<cell|=>|<cell|<wide*|<frac|f(u<rsub|j>)-f(u<rsub|j-1>)|u<rsub|j>-u<rsub|j-1>>|\<wide-underbrace\>><rsub|f<rprime|'>(\<xi\>)><left|[>1+<wide*|<frac|\<mathd\>f<rsub|j><rsup|+(mod)>|f(u<rsub|j>)-f(u<rsub|j-1>)>|\<wide-underbrace\>><rsub|0\<leqslant\>\<ast\>\<leqslant\>1>-<wide*|<frac|\<mathd\>f<rsub|j-1><rsup|+(mod)>|f(u<rsub|j>)-f(u<rsub|j-1>)>|\<wide-underbrace\>><rsub|0\<leqslant\>\<ast\>\<leqslant\>1><right|]>>>>>
   </eqnarray*>
 
   with
@@ -2041,7 +2043,7 @@
     <with|mode|math|f<rsup|+>(u)> instead of <with|mode|math|f(u)>.
 
     <item>The mirror-symetric (w.r.t. <with|mode|math|j+1/2>) procedure with
-    <with|mode|math|f<rsup|->(u)> instead of <with|mode|math|f(u)>.
+    <with|mode|math|f<rsup|->(u)> instead of <with|mode|math|f<rsup|+>(u)>.
 
     <item>Thus we obtain <with|mode|math|<wide|f|^><rsub|j+1/2>>.
   </itemize>
@@ -2093,7 +2095,7 @@
   </proof>
 
   ``TVD'' Schemes in the literature for <with|mode|math|n>D means schemes
-  which are TVD in 1D and are generalized o 2D in a dimension by dimension
+  which are TVD in 1D and are generalized to 2D in a dimension by dimension
   fashion, like this:
 
   <\eqnarray*>
@@ -2156,7 +2158,7 @@
   Next,
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|>|<cell|>|<cell|<frac|1|\<Delta\>x\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f(u)<rsub|x>\<mathd\>x*\<mathd\>y>>|<row|<cell|>|<cell|=>|<cell|f*(u(x<rsub|i+1/2>,y,t))-f(u(x<rsub|i-1/2>,y,t)).>>>>
+    <tformat|<table|<row|<cell|>|<cell|>|<cell|<frac|1|\<Delta\>x\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f(u)<rsub|x>\<mathd\>x*\<mathd\>y>>|<row|<cell|>|<cell|=>|<cell|<frac|1|\<Delta\>x\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i+1/2>,y,t))-f(u(x<rsub|i-1/2>,y,t))\<mathd\>y.>>>>
   </eqnarray*>
 
   Thus
@@ -2165,8 +2167,8 @@
     <tformat|<table|<row|<cell|<frac|\<mathd\>|\<mathd\>t><wide|<wide|u|\<bar\>>|~><rsub|i,j>+<frac|1|\<Delta\>x><left|[><with|color|blue|<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i+1/2>,y,t))\<mathd\>y>-<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i-1/2>,y,t))\<mathd\>y<right|]>>|<cell|>|<cell|>>|<row|<cell|+<frac|1|\<Delta\>y><left|[><with|color|orange|<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j+1/2>,t))\<mathd\>x>-<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j-1/2>,t))\<mathd\>x<right|]>>|<cell|=>|<cell|0.>>>>
   </eqnarray*>
 
-  The equality <with|mode|math|\<ast\>> is what breaks when we switch to a
-  nonlinear equation.
+  The equality <with|mode|math|(\<ast\>)> below is what breaks when we switch
+  to a nonlinear equation.
 
   FV Scheme:
 
@@ -2186,7 +2188,7 @@
   that
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|<frac|\<mathd\>|\<mathd\>t><wide|<wide|u|\<bar\>>|~><rsub|i,j>+<frac|1|\<Delta\>x><left|[><with|color|blue|<wide*|<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i+1/2>,y,t))\<mathd\>y|\<wide-underbrace\>><rsub|<wide|f|~><rsub|i+1/2,j>=a*<wide|u|~><rsub|i+1/2,j><above|=|<with|mode|text|*>>f(<wide|u|~><rsub|i+1/2,j>)>>-<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i-1/2>,y,t))\<mathd\>y<right|]>>|<cell|>|<cell|>>|<row|<cell|+<frac|1|\<Delta\>y><left|[><with|color|orange|<wide*|<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j+1/2>,t))\<mathd\>x|\<wide-underbrace\>><rsub|<wide|g|\<bar\>><rsub|i,j+1/2>>>-<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j-1/2>,t))\<mathd\>x<right|]>>|<cell|=>|<cell|0.>>>>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>|\<mathd\>t><wide|<wide|u|\<bar\>>|~><rsub|i,j>+<frac|1|\<Delta\>x><left|[><with|color|blue|<wide*|<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i+1/2>,y,t))\<mathd\>y|\<wide-underbrace\>><rsub|<wide|f|~><rsub|i+1/2,j>=a*<wide|u|~><rsub|i+1/2,j><above|=|(\<ast\>)>f(<wide|u|~><rsub|i+1/2,j>)>>-<frac|1|\<Delta\>y><big|int><rsub|y<rsub|j-1/2>><rsup|y<rsub|j+1/2>>f*(u(x<rsub|i-1/2>,y,t))\<mathd\>y<right|]>>|<cell|>|<cell|>>|<row|<cell|+<frac|1|\<Delta\>y><left|[><with|color|orange|<wide*|<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j+1/2>,t))\<mathd\>x|\<wide-underbrace\>><rsub|<wide|g|\<bar\>><rsub|i,j+1/2>>>-<frac|1|\<Delta\>x><big|int><rsub|x<rsub|i-1/2>><rsup|x<rsub|i+1/2>>f*(u(x,y<rsub|j-1/2>,t))\<mathd\>x<right|]>>|<cell|=>|<cell|0.>>>>
   </eqnarray*>
 
   <subsubsection|The Nonlinear Case>
@@ -2429,7 +2431,10 @@
     <item>Add third order finite difference version to HW4.
   </enumerate>
 
-  <with|color|red|[one class's worth of material is missing here.]>
+  <with|color|red|[one class's worth of material is missing here. It is
+  available as a separate PDF file called
+  <with|font-family|tt|257-missed-class.pdf> courtesy of Ishani
+  Roy.]><new-page>
 
   <section|The Discontinuous Galerkin Method>
 
@@ -2531,7 +2536,7 @@
   and thus the scheme
 
   <\equation*>
-    <big|int><rsub|I<rsub|j>>u<rsub|t>v*\<mathd\>x-<big|int><rsub|I<rsub|j>>f(u)v<rsub|x>\<mathd\>x+<wide|f|^>(u<rsub|j+1/2><rsup|->,u<rsub|j+1/2><rsup|+>)-<wide|f|^>(u<rsub|j-1/2><rsup|->,u<rsub|j-1/2><rsup|+>)=0.
+    <big|int><rsub|I<rsub|j>>u<rsub|t>v*\<mathd\>x-<big|int><rsub|I<rsub|j>>f(u)v<rsub|x>\<mathd\>x+<wide|f|^>(u<rsub|j+1/2><rsup|->,u<rsub|j+1/2><rsup|+>)v<rsub|j+1/2><rsup|->-<wide|f|^>(u<rsub|j-1/2><rsup|->,u<rsub|j-1/2><rsup|+>)v<rsub|j-1/2><rsup|+>=0.
   </equation*>
 
   Pick a basis for <with|mode|math|V<rsub|h>>:
@@ -2556,7 +2561,7 @@
   <with|mode|math|m=0,1,\<ldots\>,l> and put that into our scheme
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x)<right|)><rsub|t>\<varphi\><rsub|j><rsup|(m)>(x)\<mathd\>x>|<cell|>|<cell|>>|<row|<cell|-<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>f<left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x)<right|)><frac|\<mathd\>|\<mathd\>x>\<varphi\><rsub|j><rsup|(m)>(x)\<mathd\>x>|<cell|>|<cell|>>|<row|<cell|+<wide|f|^><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x<rsub|j+1/2>),<big|sum><rsub|l=0><rsup|k>u<rsub|j+1><rsup|(l)>(t)\<varphi\><rsub|j+1><rsup|(l)>(x<rsub|j+1/2>)<right|)>>|<cell|>|<cell|>>|<row|<cell|-<wide|f|^><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j-1><rsup|(l)>(t)\<varphi\><rsub|j-1><rsup|(l)>(x<rsub|j-1/2>),<big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x<rsub|j-1/2>)<right|)>>|<cell|=>|<cell|0.>>>>
+    <tformat|<table|<row|<cell|<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x)<right|)><rsub|t>\<varphi\><rsub|j><rsup|(m)>(x)\<mathd\>x>|<cell|>|<cell|>>|<row|<cell|-<big|int><rsub|x<rsub|j-1/2>><rsup|x<rsub|j+1/2>>f<left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x)<right|)><frac|\<mathd\>|\<mathd\>x>\<varphi\><rsub|j><rsup|(m)>(x)\<mathd\>x>|<cell|>|<cell|>>|<row|<cell|+<wide|f|^><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x<rsub|j+1/2>),<big|sum><rsub|l=0><rsup|k>u<rsub|j+1><rsup|(l)>(t)\<varphi\><rsub|j+1><rsup|(l)>(x<rsub|j+1/2>)<right|)>\<varphi\><rsub|j><rsup|(m)>(x<rsub|j+1/2>)>|<cell|>|<cell|>>|<row|<cell|-<wide|f|^><left|(><big|sum><rsub|l=0><rsup|k>u<rsub|j-1><rsup|(l)>(t)\<varphi\><rsub|j-1><rsup|(l)>(x<rsub|j-1/2>),<big|sum><rsub|l=0><rsup|k>u<rsub|j><rsup|(l)>(t)\<varphi\><rsub|j><rsup|(l)>(x<rsub|j-1/2>)<right|)>\<varphi\><rsub|j><rsup|(m)>(x<rsub|j-1/2>)>|<cell|=>|<cell|0.>>>>
   </eqnarray*>
 
   <\equation*>
@@ -2620,7 +2625,7 @@
     Take <with|mode|math|v=u> in the scheme:
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<big|int><rsub|I<rsub|j>>u<rsub|t>u*\<mathd\>x-<big|int><rsub|I<rsub|j>><wide*|f(u)u<rsub|x>*|\<wide-underbrace\>><rsub|g(u)<rsub|x>>\<mathd\>x+<wide|f|^><rsub|j+1/2>u<rsub|j+1/2><rsup|->-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+>>|<cell|=>|<cell|0>>|<row|<cell|<frac|\<mathd\>|\<mathd\>t><left|(><big|int><frac|u<rsup|2>|2>*\<mathd\>x<right|)>-g(u<rsub|j+1/2><rsup|->)+g(u<rsub|j-1/2><rsup|+>)+<wide|f|^><rsub|j+1/2>u<rsub|j+1/2><rsup|->-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+>>|<cell|=>|<cell|0>>|<row|<cell|<frac|\<mathd\>|\<mathd\>t><left|(><big|int><frac|u<rsup|2>|2>*\<mathd\>x<right|)>+<wide|F|^><rsub|j+1/2>-<wide|F|^><rsub|j-1/2>+<wide*|<left|[>-g(u<rsub|j-1/2><rsup|->)+<wide|f|^><rsub|j-1/2>u<rsub|j-1/2>+g(u<rsub|j-1/2><rsup|+>)-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+><right|]>|\<wide-underbrace\>><rsub|\<Theta\><rsub|j-1/2>>>|<cell|=>|<cell|0>>>>
+      <tformat|<table|<row|<cell|<big|int><rsub|I<rsub|j>>u<rsub|t>u*\<mathd\>x-<big|int><rsub|I<rsub|j>><wide*|f(u)u<rsub|x>*|\<wide-underbrace\>><rsub|g(u)<rsub|x>>\<mathd\>x+<wide|f|^><rsub|j+1/2>u<rsub|j+1/2><rsup|->-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+>>|<cell|=>|<cell|0>>|<row|<cell|<frac|\<mathd\>|\<mathd\>t><left|(><big|int><frac|u<rsup|2>|2>*\<mathd\>x<right|)>-g(u<rsub|j+1/2><rsup|->)+g(u<rsub|j-1/2><rsup|+>)+<wide|f|^><rsub|j+1/2>u<rsub|j+1/2><rsup|->-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+>>|<cell|=>|<cell|0>>|<row|<cell|<frac|\<mathd\>|\<mathd\>t><left|(><big|int><frac|u<rsup|2>|2>*\<mathd\>x<right|)>+<wide|F|^><rsub|j+1/2>-<wide|F|^><rsub|j-1/2>+<wide*|<left|[>-g(u<rsub|j-1/2><rsup|->)+<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|->+g(u<rsub|j-1/2><rsup|+>)-<wide|f|^><rsub|j-1/2>u<rsub|j-1/2><rsup|+><right|]>|\<wide-underbrace\>><rsub|\<Theta\><rsub|j-1/2>>>|<cell|=>|<cell|0>>>>
     </eqnarray*>
 
     where we have taken
@@ -2638,7 +2643,7 @@
     where we observe that <with|mode|math|<wide|F|^>> is consistent, i.e.
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<wide|F|^>(u,u)>|<cell|=>|<cell|g(u)+f(u)u>>|<row|<cell|>|<cell|<above|=|?>>|<cell|<big|int><rsup|u>u*f<rprime|'>(u)*\<mathd\>u>>|<row|<cell|>|<cell|\<leftarrow\>>|<cell|<big|int><rsup|u>u\<mathd\>f(u)=u*f(u)-<wide*|<big|int><rsup|u>f(u)\<mathd\>u|\<wide-underbrace\>><rsub|g(u)>.>>>>
+      <tformat|<table|<row|<cell|<wide|F|^>(u,u)>|<cell|=>|<cell|-g(u)+f(u)u>>|<row|<cell|>|<cell|<above|=|?>>|<cell|<big|int><rsup|u>u*f<rprime|'>(u)*\<mathd\>u>>|<row|<cell|>|<cell|\<leftarrow\>>|<cell|<big|int><rsup|u>u\<mathd\>f(u)=u*f(u)-<wide*|<big|int><rsup|u>f(u)\<mathd\>u|\<wide-underbrace\>><rsub|g(u)>.>>|<row|<cell|<wide|F|^><rprime|'>>|<cell|=>|<cell|-f(u)+f<rprime|'>(u)u+f(u)=f<rprime|'>(u)u.>>>>
     </eqnarray*>
 
     We would like to show <with|mode|math|\<Theta\><rsub|j-1/2>\<geqslant\>0>
@@ -2646,7 +2651,7 @@
     above<with|mode|math|\<leqslant\>0>.
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|\<Theta\>>|<cell|=>|<cell|-g(u<rsup|->)-<wide|f|^>(u<rsup|->,u<rsup|+>)u<rsup|+>+g(u<rsup|+>)-<wide|f|^>(u<rsup|->,u<rsup|+>)u<rsup|+>>>|<row|<cell|>|<cell|=>|<cell|g(u<rsup|+>)-g(u<rsup|->)-<wide|f|^>(u<rsup|->,u<rsup|+>)(u<rsup|+>-u<rsup|->)>>|<row|<cell|>|<cell|=>|<cell|g<rprime|'>(\<xi\>)(u<rsup|+>)(u<rsup|+>-u<rsup|->)-<wide|f|^>(u<rsup|->,u<rsup|+>)(u<rsup|+>-u<rsup|->)>>|<row|<cell|>|<cell|=>|<cell|(u<rsup|+>-u<rsup|->)(f(\<xi\>)-<wide|f|^>(u<rsup|->,u<rsup|+>))>>|<row|<cell|>|<cell|=>|<cell|(u<rsup|+>-u<rsup|->)(f(\<xi\>,\<xi\>)-<wide|f|^>(u<rsup|->,u<rsup|+>)).>>>>
+      <tformat|<table|<row|<cell|\<Theta\>>|<cell|=>|<cell|-g(u<rsup|->)+<wide|f|^>(u<rsup|->,u<rsup|+>)u<rsup|->+g(u<rsup|+>)-<wide|f|^>(u<rsup|->,u<rsup|+>)u<rsup|+>>>|<row|<cell|>|<cell|=>|<cell|g(u<rsup|+>)-g(u<rsup|->)-<wide|f|^>(u<rsup|->,u<rsup|+>)(u<rsup|+>-u<rsup|->)>>|<row|<cell|>|<cell|=>|<cell|g<rprime|'>(\<xi\>)(u<rsup|+>)(u<rsup|+>-u<rsup|->)-<wide|f|^>(u<rsup|->,u<rsup|+>)(u<rsup|+>-u<rsup|->)>>|<row|<cell|>|<cell|=>|<cell|(u<rsup|+>-u<rsup|->)(f(\<xi\>)-<wide|f|^>(u<rsup|->,u<rsup|+>))>>|<row|<cell|>|<cell|=>|<cell|(u<rsup|+>-u<rsup|->)(<wide|f|^>(\<xi\>,\<xi\>)-<wide|f|^>(u<rsup|->,u<rsup|+>)).>>>>
     </eqnarray*>
 
     After a simple case distinction on <with|mode|math|u<rsup|->\<lessgtr\>\<xi\>\<lessgtr\>u<rsup|+>>
@@ -2836,8 +2841,8 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-32>>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Discontinuous
-      Galerkin method> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>The
+      Discontinuous Galerkin Method> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-33><vspace|0.5fn>
 
       <with|par-left|<quote|1.5fn>|5.1<space|2spc>Some Theoretical Properties
